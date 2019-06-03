@@ -1,0 +1,159 @@
+@extends('layouts.main')
+
+@section('content')
+
+  <div class="container-fluid">
+        <div class="registro">
+          <div class="row justify-content-center">
+            <img src="img/PngLigas/ligue1.png" alt="LOGO LIG FRANCIA " width="300px" height="300px">
+          </div>
+
+                                            <!-- REMERA 1 -->
+
+          <div class="row justify-content-center">
+            <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+
+              <div class="card1 cardCam">
+                <div id="ligaFra1" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="10000">
+                      <img src="img/LigaFrancesa/psg1.jpg" class="d-block w-100" alt="CAM PSG FRENTE">
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+                      <img src="img/LigaFrancesa/psg2.jpg" class="d-block w-100" alt="CAM PSG ESPALDA">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/LigaFrancesa/psg3.jpg" class="d-block w-100" alt="CAM PSG ESCUDO">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#ligaFra1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#ligaFra1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-center">Camiseta<br>PSG</h5>
+                <ul class="list-group">
+                  <li class="precio text-center">$$$$</li>
+                  <li class="list-item text-center">Primera equipacion</li>
+                </ul>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                  <option selected>Talle..</option>
+                  <option value="1">Small</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Large</option>
+                  <option value="4">X Large</option>
+                </select>
+                <div class="botonCarrito">
+                  <button type="button" class="btn btn-dark">Agregar al Carro</button>
+                </div>
+              </div>
+            </div>
+
+                                              <!--remera 2-->
+
+            <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+              <div class="card1 cardCam">
+                <div id="ligaFra2" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="10000">
+                      <img src="img/LigaFrancesa/mar1.jpg" class="d-block w-100" alt="CAM MAR FRENTE">
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+                      <img src="img/LigaFrancesa/mar2.jpg" class="d-block w-100" alt="CAM MAR ESPALDA">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/LigaFrancesa/mar3.jpg" class="d-block w-100" alt="CAM MAR ESCUDO">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#ligaFra2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#ligaFra2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-center"> Camiseta<br>Marselle</h5>
+                <ul class="list-group">
+                  <li class="text-center">$$$$</li>
+                  <li class="list-item text-center">Primera equipacion</li>
+                </ul>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                  <option selected>Talle..</option>
+                  <option value="1">Small</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Large</option>
+                  <option value="4">X Large</option>
+                </select>
+                <div class="botonCarrito">
+                  <button type="button" class="btn btn-dark">Agregar al Carro</button>
+                </div>
+              </div>
+            </div>
+
+                                              <!-- remera 3-->
+
+            <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+
+              <div class="card1 cardCam">
+                <div id="ligaFra3" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="10000">
+                      <img src="img/LigaFrancesa/lyo1.jpg" class="d-block w-100" alt="CAM LYON FRENTE">
+                    </div>
+                    <div class="carousel-item" data-interval="2000">
+                      <img src="img/LigaFrancesa/lyo2.jpg" class="d-block w-100" alt="CAM LYON ESPALDA">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/LigaFrancesa/lyo3.jpg" class="d-block w-100" alt="CAM LYON ESCUDO">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#ligaFra3" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#ligaFra3" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-center">Camiseta<br>Lyon</h5>
+                <ul class="list-group">
+                  <li class="precio text-center">$$$$</li>
+                  <li class="list-item text-center">Primera Equipacion</li>
+                </ul>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                  <option selected>Talle..</option>
+                  <option value="1">Small</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Large</option>
+                  <option value="4">X Large</option>
+                </select>
+                <div class="botonCarrito">
+                  <button type="button" class="btn btn-dark">Agregar al Carro</button>
+                </div>
+                </div>
+              </div>
+
+
+                                      <!-- ACÁ AGREGAR MÁS LUEGO-->
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+@endsection

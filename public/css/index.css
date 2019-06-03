@@ -1,0 +1,268 @@
+body{
+  background-image: url(../img/back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 100px;
+  font-family: 'Open Sans', sans-serif;
+}
+footer{
+  background-image: url(../img/back1.png);
+  color: white;
+  padding: 20px;
+}
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+.row{
+  margin: 0;
+}
+.carrusel{
+  margin-top: 16px;
+}
+
+/* CSS CATEGORIAS INDEX */
+/* .catLiga{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  text-align: center;
+  top: 65%;
+  padding: 1% 0;
+}
+.catLiga h4{
+  margin: auto;
+} */
+
+
+/* CSS CARTELITOS DE PRODUCTOS*/
+.prox{
+  position: absolute;
+  top: -36%;
+  left: 23%;
+  width: 60%;
+}
+.ship{
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  width: 18%;
+}
+.desc{
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  width: 30%;
+}
+/* FIN CSSS CARTELITOS */
+
+
+
+.menu{
+  background-image: url(../img/back1.png);
+  font-family: 'Open Sans', sans-serif;
+  padding: 25px;
+}
+.menu ul li:hover, .menu ul li:focus{
+  background-color: #fff;
+}
+.menu ul li a:hover, .menu ul li a:focus{
+  color: #000 !important;
+}
+.navbar-toggler{
+  background-color: #fff;
+}
+.nav-link{
+  color: white !important;
+}
+.cajacat{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.cajacat div img{
+  filter: grayscale(90%);
+}
+.cajacat div img:hover{
+  filter: grayscale(0%);
+  position: relative;
+  transition: 1s;
+}
+
+.info{
+  color: #000 !important;
+  text-align: center;
+}
+.pie{
+  display: flex;
+  justify-content: flex-end;
+  top: 30px;
+}
+.pie p{
+  padding: 10px;
+  color: white;
+}
+.pie a {
+color: white;
+}
+.pie-iconos, .icocompra, .icocont{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+i{
+  margin: 0 10px;
+  color: white;
+}
+
+
+
+/* CSS PRODUCTOS:PHP  */
+.cajacat1 {
+    border: solid 1px black;
+    background-color: white;
+    margin:  20px 35px;
+    justify-content: center;
+}
+.botonCarrito{
+  margin: 10px 0;
+  text-align: center;
+}
+.cajacat1 .card-body{
+  padding: 5px;
+}
+.card-title {
+font-family: 'Rubik', sans-serif;
+}
+.list-group{
+  list-style-type: none;
+}
+.list-item{
+font-family:  'Crimson Text', serif;
+color: Black;
+}
+.cardCam{
+  margin-top: 15px;
+}
+
+
+
+/* CSS FAQ.PHP */
+.pregfrec{
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.card-header h5 .btn{
+  padding: 20px 0;
+}
+#preguntasf{
+  padding: 15px 10px;
+  margin-top: 16px;
+}
+#preguntasf h1{
+  font-size: 30px;
+}
+
+.card-header{
+  background-color: white;
+  border-bottom: 0 !important;
+  padding: 0;
+}
+.card{
+  border: 0;
+}
+.btn-link{
+  color: #000;
+  background-color: #9c9c9c;
+  border-radius: 0;
+}
+.btn-link:hover, .btn-link:focus{
+  text-decoration: none;
+  color: white;
+  background-color: #000;
+}
+/* Falta cargar al git porque se habia modificado los items del menu, en registro no se ve el menu en mobile */
+.collapse .card-body, .card .collapsing{
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+
+/* CSS DE LOS FORMULARIO */
+.registro, .nosotros{
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  color: #000;
+}
+
+
+/* css de contacto */
+.contacto{
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px 20px;
+}
+.cont-ico a i{
+  color: black;
+}
+.justify-content-center  {
+  text-align: center;
+}
+
+
+
+
+/* CSS de Producto*/
+.registro li {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.registro p {
+text-align: center  !important;
+}
+
+
+/* CSS de LOGIN*/
+.reg{
+  padding-top: 0;
+  padding-bottom:10px;
+}
+
+/* CSS RECUPERAR CONTRASEÑA */
+
+.pantallaFull{
+  min-height: 70vh;
+}
+.recPass{
+  margin: 10% auto;
+}
+.pantallaFull .recPass button{
+  margin-top: 10px;
+  background-color: #000;
+  border-radius: 0;
+}
+.pantallaFull .recPass button:hover{
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 0;
+}
+
+
+/* imgen oculta */
+.imgA{
+  display: none;
+}
+/* media query */
+@media (max-width: 767px) {
+  .img1{
+    display: none;
+  }
+  .imgA{
+    display: block;
+  }
+  .prox{
+    position: absolute;
+    top: -3%;
+    left: 14%;
+    width: 72%;
+  }
+}
