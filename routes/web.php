@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/agregarProducto', 'ViewController@agregarProducto');
+Route::post('/agregarProducto', 'AgregarProducto@agregar');
 Route::get('/contact', 'ViewController@contact');
 Route::get('/france', 'ViewController@france');
 Route::get('/england', 'ViewController@england');
