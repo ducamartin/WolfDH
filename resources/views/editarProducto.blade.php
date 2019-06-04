@@ -2,6 +2,12 @@
 @section('content')
 <div class="container-fluid registro">
 
+  <div>
+    @foreach ($products as $product)
+      <a href="/products/{{$product->id}}">{{ $product->name }}</a><br>
+    @endforeach
+  </div>
+
   <form class="" action="" method="post">
     @csrf
     <label for="name">Nombre</label>
@@ -19,7 +25,7 @@
       @error('description')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror<br>
-    <input type="submit" name="" value="Enviar">
+    <input type="submit" name="" value="Guardar Cambios">
   </form>
 
 </div>

@@ -13,8 +13,8 @@ class AgregarProducto extends Controller
 
       $this->validate( $req, [
             'name' => 'required|unique:products',
-            'price' => 'required|numeric:genres',
-            'description' => 'required:genres',
+            'price' => 'required|numeric:products',
+            'description' => 'required:products',
         ],
         [
             'name.required' => 'El campo Nombre es Obligatorio',

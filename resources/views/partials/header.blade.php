@@ -29,6 +29,9 @@
           <li class="nav-item active">
             <a class="nav-link" href="{{'agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{'editarProducto'}}">EDITAR PRODUCTOS <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
