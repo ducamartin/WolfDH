@@ -24,6 +24,17 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        // <-----ESTO QUIERO AGREGAR----->
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->string('last_name', 100);
+        //     $table->string('street');
+        //     $table->string('town');
+        //     $table->string('province');
+        //     $table->integer('zipcode');
+        // });
+        // <-----ESTO QUIERO AGREGAR----->
+
     }
 
     /**
@@ -33,6 +44,16 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        // <-----ESTO QUIERO AGREGAR----->
+        // Schema::table('users', function (Blueprint $table) {
+        //   $table->dropColumn('last_name');
+        //   $table->dropColumn('street');
+        //   $table->dropColumn('town');
+        //   $table->dropColumn('province');
+        //   $table->dropColumn('zipcode');
+        // });
+        // <-----ESTO QUIERO AGREGAR----->
+
         Schema::dropIfExists('users');
     }
 }

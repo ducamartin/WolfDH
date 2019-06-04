@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/listaProductos', 'ListarProductos@index');
 Route::get('/agregarProducto', 'ViewController@agregarProducto');
 Route::post('/agregarProducto', 'AgregarProducto@agregar');
 Route::get('/contact', 'ViewController@contact');
