@@ -29,12 +29,6 @@ class ViewController extends Controller
   }
   public function agregarProducto(){
     return view('agregarProducto');
-  }
-  public function editarProducto(){
-    return view('editarProducto');
-  }
-  public function vistaProductos(){
-    return view('editarProducto');
-  }
+  }  
 
 }
