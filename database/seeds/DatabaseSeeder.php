@@ -11,6 +11,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // $this->call(SeederDePrueba::class);
+
+
+        // DB::table('products')->insert(
+        //   [
+        //     'name'=> 'Lanus',
+        //     'price'=> 1000,
+        //     'description'=> 'camiseta de Lanus',
+        //   ]
+        // );
+
+        factory(App\Product::class, 10)->create();
     }
 }
