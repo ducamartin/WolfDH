@@ -10,14 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/listaProductos', 'ListarProductos@index');
-Route::get('/agregarProducto', 'ViewController@agregarProducto');
-Route::post('/agregarProducto', 'AgregarProducto@agregar');
-Route::get('/contact', 'ViewController@contact');
+Route::post('/edit/{id}', 'ProductController@update');
+Route::get('/edit/{id}', 'ProductController@edit');
+Route::get('/agregarProducto', 'ProductController@agregarProducto');
+Route::post('/agregarProducto', 'ProductController@agregar');
+Route::get('/england', 'ProductController@index');
 Route::get('/france', 'ViewController@france');
-Route::get('/england', 'ViewController@england');
 Route::get('/spain', 'ViewController@spain');
 Route::get('/italy', 'ViewController@italy');
+Route::get('/contact', 'ViewController@contact');
 Route::get('/faqs', 'ViewController@faqs');
 Route::get('/', 'ViewController@index');
 

@@ -7,9 +7,18 @@
         <img src="img/PngLigas/ligainglesa.png" alt="LOGO LIG INGLATERRA" width="300px" height="300px">
       </div>
 
+      @if (session('mensaje'))
+         <div class="alert alert-success">
+             {{ session('mensaje') }}
+         </div>
+      @endif
+
+
                                             <!-- REMERA 1 -->
 
+
       <div class="row justify-content-center">
+        @foreach ($products as $product)
         <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
           <div class="card1 cardCam">
             <div id="ligaIng1" class="carousel slide" data-ride="carousel">
@@ -35,27 +44,31 @@
             </div>
           </div>
           <div class="card-body">
-            <h5 class="card-title text-center">Camiseta<br>Manchester Utd</h5>
-            <ul class="list-group">
-              <li class="precio text-center">$$$$</li>
-              <li class="list-item text-center">Primera equipacion</li>
-            </ul>
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option selected>Talle..</option>
-              <option value="1">Small</option>
-              <option value="2">Medium</option>
-              <option value="3">Large</option>
-              <option value="4">X Large</option>
-            </select>
-            <div class="botonCarrito">
-              <button type="button" class="btn btn-dark">Agregar al Carro</button>
-            </div>
+              <h5 class="card-title text-center">{{$product->name}}</h5>
+              <ul class="list-group">
+                <li class="precio text-center">{{$product->price}}</li>
+                <li class="list-item text-center">{{$product->description}}</li>
+              </ul>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option selected>Talle..</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+                <option value="4">X Large</option>
+              </select>
+              <div class="botonCarrito">
+                <button type="button" class="btn btn-dark">Agregar al Carro</button>
+              </div>
+              <div class="botonCarrito">
+                <a class="btn btn-success" href="/edit/{{$product->id}}">Editar</a>
+              </div>
           </div>
         </div>
+      @endforeach
 
               <!--remera 2-->
 
-        <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+        {{-- <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
           <div class="card1 cardCam">
             <div id="ligaIng2" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
@@ -96,11 +109,11 @@
               <button type="button" class="btn btn-dark">Agregar al Carro</button>
             </div>
           </div>
-        </div>
+        </div> --}}
 
                     <!-- remera 3-->
 
-        <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+        {{-- <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
           <div class="card1 cardCam">
             <div id="ligaIng3" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
@@ -141,7 +154,7 @@
               <button type="button" class="btn btn-dark">Agregar al Carro</button>
             </div>
           </div>
-        </div>
+        </div> --}}
 
 
                                 <!-- ACÁ AGREGAR MÁS LUEGO-->
