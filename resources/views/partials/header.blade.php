@@ -10,32 +10,32 @@
             if (empty($_SESSION['email'])) {
           ?>
           <li class="nav-item active">
-            <a class="nav-link" href="{{'pruebaRegistro'}}">REGISTRO <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{'//pruebaRegistro'}}">REGISTRO <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{'login'}}">INICIAR SESION <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{'/login'}}">INICIAR SESION <span class="sr-only">(current)</span></a>
           </li  class="nav-item active">
           <?php } else {?>
             <li class="nav-item active">
-              <a class="nav-link" href="{{'pruebaRegistro'}}"><?php if(isset($nombreUsuario)) echo "Bienvenido  {$nombreUsuario}" ?> <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{'/pruebaRegistro'}}"><?php if(isset($nombreUsuario)) echo "Bienvenido  {$nombreUsuario}" ?> <span class="sr-only">(current)</span></a>
             </li>
           <li>
-            <a class="nav-link" href="{{'cerrarSession'}}">CERRAR SESION <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{'/cerrarSession'}}">CERRAR SESION <span class="sr-only">(current)</span></a>
           </li>
           <?php } ?>
           <li class="nav-item active">
-            <a class="nav-link" href="{{'faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="{{'agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
-          </li>          
+            <a class="nav-link" href="{{'/agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{'spain'}}">Liga Española</a>
-              <a class="dropdown-item" href="{{'england'}}">Liga Inglesa</a>
-              <a class="dropdown-item" href="{{'france'}}">Liga Francesa</a>
-              <a class="dropdown-item" href="{{'italy'}}">Liga Italiana</a>
+              <a class="dropdown-item" href="{{'/spain'}}">Liga Española</a>
+              <a class="dropdown-item" href="{{'/england'}}">Liga Inglesa</a>
+              <a class="dropdown-item" href="{{'/france'}}">Liga Francesa</a>
+              <a class="dropdown-item" href="{{'/italy'}}">Liga Italiana</a>
             </div>
           </li>
         </ul>

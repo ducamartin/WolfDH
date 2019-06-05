@@ -1,15 +1,12 @@
 @extends('layouts.main')
-
 @section('content')
-
        <div class="container-fluid registro">
 
            <form method="post" action="">
              @csrf
              <h2>Edición de Productos</h2>
-             <div class="form-row">
 
-                  <div  class="form-group col-md-4">
+                  <div class="form-group col-md-4">
                       <label for="name">Nombre de la Camiseta</label>
                       <input class="form-control" type="text" name="name"
                      id="title" value="{{old('name', $products->name)}}">
@@ -34,7 +31,7 @@
                       @enderror
                   </div>
 
-              </div>
+              
 
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 
