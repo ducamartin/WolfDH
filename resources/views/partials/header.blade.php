@@ -1,6 +1,6 @@
 <header>
     <nav  class="menu navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <a class="nav-link" href="{{'/'}}"> <img src="img/logo.png" alt="Wolf" width="50px" height="50px"></a>
+      <a class="nav-link" href="{{'/'}}"> <img src="/img/logo.png" alt="Wolf" width="50px" height="50px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
       </button>

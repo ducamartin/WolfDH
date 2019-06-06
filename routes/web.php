@@ -16,6 +16,7 @@ Route::get('/edit/{id}', 'ProductController@edit');
 Route::get('/agregarProducto', 'ProductController@agregarProducto');
 Route::post('/agregarProducto', 'ProductController@agregar');
 Route::get('/england', 'ProductController@index');
+
 Route::get('/france', 'ViewController@france');
 Route::get('/spain', 'ViewController@spain');
 Route::get('/italy', 'ViewController@italy');
