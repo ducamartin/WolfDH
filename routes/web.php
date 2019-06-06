@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/deleteProduct', 'ProductController@delete');
 Route::post('/edit/{id}', 'ProductController@update');
 Route::get('/edit/{id}', 'ProductController@edit');
 Route::get('/agregarProducto', 'ProductController@agregarProducto');

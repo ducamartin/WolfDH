@@ -83,4 +83,15 @@ class ProductController extends Controller
 
       }
 
+      public function delete(Request $request)
+      {
+        $id = $request['id'];
+
+        $productoAEliminar = Product::find($id);
+
+        $productoAEliminar -> delete();
+
+        return redirect('/england')->with('mensaje', 'Producto eliminadoi exitosamente!');
+      }
+
 }

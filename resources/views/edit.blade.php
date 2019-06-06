@@ -31,10 +31,15 @@
                       @enderror
                   </div>
 
-              
+
 
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 
+          </form>
+          <form class="" action="/deleteProduct" method="post">
+              @csrf
+              <input type="hidden" name="id" value="{{$products->id}}">
+              <button type="submit" name="button" class="btn btn-danger">Eliminar Producto</button>
           </form>
 
       </div>
