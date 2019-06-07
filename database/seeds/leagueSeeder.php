@@ -13,17 +13,17 @@ class leagueSeeder extends Seeder
     {
       DB::table('leagues')->insert(
         [
-          'name'=> 'Liga Inglesa',
+          'name'=> 'Inglesa',
         ]
       );
       DB::table('leagues')->insert(
         [
-          'name'=> 'Liga Española',
+          'name'=> 'Española',
         ]
       );
       DB::table('leagues')->insert(
         [
-          'name'=> 'Liga Francesa',
+          'name'=> 'Francesa',
         ]
       );
     }
