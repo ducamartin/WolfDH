@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
           $table->bigIncrements('id');
           $table->string('name');
           $table->text('description');
-          $table->string('size');
+          $table->string('size')->nullable();;
           $table->float('price');
-          $table->unsignedBigInteger('league_id');
-          $table->unsignedBigInteger('brand_id');
+          $table->unsignedBigInteger('league_id')->nullable();;
+          $table->unsignedBigInteger('brand_id')->nullable();;
           $table->timestamps();
           $table->foreign('league_id')->references('id')->on('leagues');
           $table->foreign('brand_id')->references('id')->on('brands');

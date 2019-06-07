@@ -46,7 +46,7 @@
           <div class="card-body">
               <h5 class="card-title text-center">{{$product->name}}</h5>
               <ul class="list-group">
-                <li class="precio text-center">{{$product->price}}</li>
+                <li class="precio text-center">$ {{$product->price}}</li>
                 <li class="list-item text-center">{{$product->description}}</li>
               </ul>
               <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
