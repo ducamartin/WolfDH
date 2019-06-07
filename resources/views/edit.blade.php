@@ -3,7 +3,7 @@
 @section('content')
        <div class="container-fluid registro">
 
-           <form method="post" action="">
+           <form method="post" action="" enctype="multipart/form-data">
              @csrf
              <h2>Edición de Productos</h2>
 
@@ -47,6 +47,15 @@
                           <div class="alert alert-danger">{{ $message }}</div>
                       @enderror
                   </div>
+
+                  <div  class="form-group col-md-4">
+                    <label for="imgProduct">Imagen del Producto</label>
+                    <img src="/storage/{{$products->poster}}" width="100px" alt="">
+                    Cambiar imagen:<input class="form-control" type="file" name="imgProduct" value="">
+                    @error('imgProduct')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
 
 
 

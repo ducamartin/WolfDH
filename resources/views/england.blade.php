@@ -24,14 +24,14 @@
             <div id="ligaIng1" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
-                  <img src="img/LigaInglesa/man1.jpg" class="d-block w-100" alt="CAM MANU FRENTE">
+                  <img src="/storage/{{$product->imgProduct}}" class="d-block w-100" alt="CAM MANU FRENTE">
                 </div>
-                <div class="carousel-item" data-interval="2000">
+                {{-- <div class="carousel-item" data-interval="2000">
                   <img src="img/LigaInglesa/man2.jpg" class="d-block w-100" alt="CAM MANU ESPALDA">
                 </div>
                 <div class="carousel-item">
                   <img src="img/LigaInglesa/man3.jpg" class="d-block w-100" alt="CAM MANU ESCUDO">
-                </div>
+                </div> --}}
               </div>
               <a class="carousel-control-prev" href="#ligaIng1" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

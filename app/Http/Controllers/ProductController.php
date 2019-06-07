@@ -7,6 +7,7 @@ use App\Product;
 
 class ProductController extends Controller
 {
+
   public function agregar(Request $req){
 
     $this->validate( $req, [
@@ -76,10 +77,20 @@ class ProductController extends Controller
           $productoAEditar->price = $request->price;
           $productoAEditar->description = $request->description;
 
+          if($request->file('imgProduct')){
+            //al archivo que subi lo voy a guardar en el filesystem de laravel
+            $rutaDelArchivo = $request->file('imgProduct')->store('public');
+            //le saco solo el nombre
+            $nombreArchivo = basename($rutaDelArchivo);
+            //guardo el nombre del archivo en el campo poster
+            $productoAEditar->imgProduct = $nombreArchivo;
+          }
+          
           //lo mando a guardar
           $productoAEditar->save();
 
           return redirect('/england')->with('mensaje', 'Producto modificado exitosamente!');
+
 
       }
 
@@ -93,5 +104,6 @@ class ProductController extends Controller
 
         return redirect('/england')->with('mensaje', 'Producto eliminadoi exitosamente!');
       }
+
 
 }
