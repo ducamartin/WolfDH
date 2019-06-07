@@ -25,8 +25,24 @@
                   </div>
 
                   <div  class="form-group col-md-4">
+                      <label for="league_id">Liga</label>
+                      <input class="form-control" type="text" name="league_id" id="league_id"  value="{{old('league_id',$products->league_id)}}">
+                      @error('league_id')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                  </div>
+
+                  <div  class="form-group col-md-4">
+                      <label for="brand_id">Marca</label>
+                      <input class="form-control" type="text" name="brand_id" id="brand_id"  value="{{old('brand_id',$products->brand_id)}}">
+                      @error('brand_id')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                      @enderror
+                  </div>
+
+                  <div  class="form-group col-md-4">
                       <label for="description">Descripcion</label>
-                      <input class="form-control" type="text" name="description" id="description"  value="{{old('description',$products->description)}}">
+                      <textarea class="form-control" name="description" id="description"  value="" rows="8" cols="80">{{old('description',$products->description)}}</textarea>
                       @error('description')
                           <div class="alert alert-danger">{{ $message }}</div>
                       @enderror

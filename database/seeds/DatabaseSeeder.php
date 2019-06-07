@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(SeederDePrueba::class);
+        $this->call(leagueSeeder::class);
+        $this->call(brandSeeder::class);
 
 
         // DB::table('products')->insert(
