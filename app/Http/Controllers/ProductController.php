@@ -103,16 +103,6 @@ class ProductController extends Controller
 
       }
 
-      public function addActor($id, Request $request)
-      {
-          //busco la movie por el id
-            $movie = Movie::find($id);
-          //guardo o attacheo el actor a la movie
-            $movie->actors()->attach($request->actor_id);
-          //redirijo a show de la movie
-          return redirect('/movies/' . $id);
-      }
-
       public function delete(Request $request)
       {
         $id = $request['id'];
