@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CampoImgProduct extends Migration
+class CreateSizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CampoImgProduct extends Migration
      */
     public function up()
     {
-      Schema::table('products', function (Blueprint $table) {
-        $table->string('imgProduct', 200)->nullable()->default('default.png');
-      });
+        Schema::create('sizes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,8 +27,6 @@ class CampoImgProduct extends Migration
      */
     public function down()
     {
-      Schema::table('products', function (Blueprint $table) {
-      $table->dropColumn('imgProduct');
-    });
+        Schema::dropIfExists('sizes');
     }
 }

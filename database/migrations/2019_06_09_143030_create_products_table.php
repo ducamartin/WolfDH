@@ -17,13 +17,15 @@ class CreateProductsTable extends Migration
           $table->bigIncrements('id');
           $table->string('name');
           $table->text('description');
-          $table->string('size')->nullable();;
+          $table->string('imgProduct', 200)->nullable()->default('default.png');
+          $table->unsignedBigInteger('size_id')->nullable();;
           $table->float('price');
           $table->unsignedBigInteger('league_id')->nullable();;
           $table->unsignedBigInteger('brand_id')->nullable();;
           $table->timestamps();
           $table->foreign('league_id')->references('id')->on('leagues');
           $table->foreign('brand_id')->references('id')->on('brands');
+          $table->foreign('size_id')->references('id')->on('sizes');
       });
     }
 

@@ -63,10 +63,12 @@ class ProductController extends Controller
             'name'=> 'required',
             'price'=> 'required|numeric',
             'description'=> 'required',
+            'imgProduct' => 'nullable|image'
           ],
           [
             'required' => 'Campo obligatorio',
             'numeric' => 'Debe ser un numero',
+            'image' => 'Imagen invalida'
           ]
         );
           //dd($request->title);
@@ -85,7 +87,7 @@ class ProductController extends Controller
             //guardo el nombre del archivo en el campo poster
             $productoAEditar->imgProduct = $nombreArchivo;
           }
-          
+
           //lo mando a guardar
           $productoAEditar->save();
 
