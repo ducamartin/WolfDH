@@ -57,8 +57,15 @@
                     @enderror
                 </div>
 
-
-
+                <div class="form-group col-md-4">
+                  <label for="">Talle</label>
+                  <select class="" name="size_id">
+                    @foreach ($sizes as $size)
+                      <option value="{{$size->id}}">{{$size->name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+                
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 
           </form>

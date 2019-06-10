@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Size;
+
 
 class ProductController extends Controller
 {
@@ -50,10 +52,13 @@ class ProductController extends Controller
   public function edit($id)
     {
       $products = Product::find($id);
-        return view('edit')
-          ->with([
-            'products' => $products
-          ]);
+      $sizes = Size::all();
+      return view('edit')
+      ->with([
+        'products' => $products,
+        'sizes' =>$sizes,
+      ]);
+
     }
 
     public function update($id, Request $request)
@@ -74,10 +79,12 @@ class ProductController extends Controller
           //dd($request->title);
           //me traigo a la pelicula usando el find
           $productoAEditar = Product::find($id);
+
           //le cambio los atributos o valores al objeto que me traje arriba
           $productoAEditar->name = $request->name;
           $productoAEditar->price = $request->price;
           $productoAEditar->description = $request->description;
+          $productoAEditar->sizes()->attach($request->size_id);
 
           if($request->file('imgProduct')){
             //al archivo que subi lo voy a guardar en el filesystem de laravel
@@ -94,6 +101,16 @@ class ProductController extends Controller
           return redirect('/england')->with('mensaje', 'Producto modificado exitosamente!');
 
 
+      }
+
+      public function addActor($id, Request $request)
+      {
+          //busco la movie por el id
+            $movie = Movie::find($id);
+          //guardo o attacheo el actor a la movie
+            $movie->actors()->attach($request->actor_id);
+          //redirijo a show de la movie
+          return redirect('/movies/' . $id);
       }
 
       public function delete(Request $request)
