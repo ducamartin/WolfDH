@@ -65,7 +65,14 @@
                     @endforeach
                   </select>
                 </div>
-                
+
+                {{-- MUESTRO TALLES  DISPONIBLES --}}
+                <ul>
+                  @foreach ($sizeStocks as $sizeStock)
+                    <li>{{$sizeStock->name}}</li>
+                  @endforeach
+                </ul>
+
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 
           </form>
