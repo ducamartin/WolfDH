@@ -168,6 +168,9 @@ color: Black;
   border-bottom: 0 !important;
   padding: 0;
 }
+.usuario{
+  
+}
 .card{
   border: 0;
 }
@@ -222,7 +225,7 @@ text-align: center  !important;
 
 /* CSS de LOGIN*/
 .reg{
-  padding-top: 0;
+  padding-top:10px;
   padding-bottom:10px;
 }
 

@@ -6,23 +6,32 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-auto">
-          <?php
-            if (empty($_SESSION['email'])) {
-          ?>
+          @guest
           <li class="nav-item active">
             <a class="nav-link" href="{{'/register'}}">REGISTRO <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{'/login'}}">INICIAR SESION <span class="sr-only">(current)</span></a>
           </li  class="nav-item active">
-          <?php } else {?>
-            <li class="nav-item active">
-              <a class="nav-link" href="{{'/pruebaRegistro'}}"><?php if(isset($nombreUsuario)) echo "Bienvenido  {$nombreUsuario}" ?> <span class="sr-only">(current)</span></a>
-            </li>
-          <li>
-            <a class="nav-link" href="{{'/cerrarSession'}}">CERRAR SESION <span class="sr-only">(current)</span></a>
+          @else
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                Bienvenido {{ Auth::user()->name }}! <span class="caret"></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    CERRAR SESION
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
           </li>
-          <?php } ?>
+          @endguest
           <li class="nav-item active">
             <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
           </li>
