@@ -10,7 +10,7 @@
             if (empty($_SESSION['email'])) {
           ?>
           <li class="nav-item active">
-            <a class="nav-link" href="{{'//pruebaRegistro'}}">REGISTRO <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{'/register'}}">REGISTRO <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{'/login'}}">INICIAR SESION <span class="sr-only">(current)</span></a>

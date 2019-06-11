@@ -13,7 +13,7 @@ class Product extends Model
 
   public function sizes()
   {
-    return $this->belongsToMany(Size::class);
+    return $this->belongsTo(Size::class);
   }
 
 }

@@ -69,16 +69,16 @@ class ProductController extends Controller
       $sizes = Size::all();
 
       // ver talles disponibles
-      $sizeStocks = $products->sizes;
-      foreach ($sizeStocks as $sizeStock) {
-        $arrayIds[] = $sizeStock->id;
-      }
+      // $sizeStocks = $products->sizes;
+      // foreach ($sizeStocks as $sizeStock) {
+      //   $arrayIds[] = $sizeStock->id;
+      // }
 
       return view('edit')
       ->with([
         'products' => $products,
         'sizes' =>$sizes,
-        'sizeStocks' => $sizeStocks
+        // 'sizeStocks' => $sizeStocks
       ]);
 
     }

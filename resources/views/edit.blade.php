@@ -67,11 +67,11 @@
                 </div>
 
                 {{-- MUESTRO TALLES  DISPONIBLES --}}
-                <ul>
+                {{-- <ul>
                   @foreach ($sizeStocks as $sizeStock)
                     <li>{{$sizeStock->name}}</li>
                   @endforeach
-                </ul>
+                </ul> --}}
 
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 

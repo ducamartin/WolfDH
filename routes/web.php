@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/deleteProduct', 'ProductController@delete');
-Route::post('/edit/{id}', 'ProductController@update');
-Route::get('/edit/{id}', 'ProductController@edit');
-Route::get('/agregarProducto', 'ProductController@agregarProducto');
-Route::post('/agregarProducto', 'ProductController@agregar');
+Route::post('/deleteProduct', 'ProductController@delete')->middleware('auth');
+Route::post('/edit/{id}', 'ProductController@update')->middleware('auth');
+Route::get('/edit/{id}', 'ProductController@edit')->middleware('auth');
+Route::get('/agregarProducto', 'ProductController@agregarProducto')->middleware('auth');
+Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth');
 Route::get('/england', 'ProductController@index');
 
 Route::get('/france', 'ViewController@france');
@@ -27,3 +27,7 @@ Route::get('/', 'ViewController@index');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
