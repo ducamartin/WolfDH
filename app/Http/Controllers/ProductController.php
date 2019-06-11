@@ -16,6 +16,9 @@ class ProductController extends Controller
           'name' => 'required|unique:products',
           'price' => 'required|numeric:products',
           'description' => 'required:products',
+          // 'brand_id' => 'required:products',
+          // 'league_id' => 'required:products',
+          'size_id' => 'required:products'
       ],
       [
           'name.required' => 'El campo Nombre es Obligatorio',
@@ -30,6 +33,10 @@ class ProductController extends Controller
     $productoNuevo->name = $req->input('name');
     $productoNuevo->description = $req->input('description');
     $productoNuevo->price = $req->input('price');
+    // $productoNuevo->brand_id = $req->input('brand_id');
+    // $productoNuevo->league_id = $req->input('league_id');
+    $productoNuevo->size_id = $req->input('size_id');
+
 
     $productoNuevo->save();
 
@@ -38,7 +45,14 @@ class ProductController extends Controller
   }
 
   public function agregarProducto(){
-    return view('agregarProducto');
+
+    $sizes = Size::all();
+
+    return view('agregarProducto')
+    ->with([
+      'sizes' =>$sizes,
+    ]);
+
   }
 
   public function index(){
