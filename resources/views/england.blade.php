@@ -47,17 +47,13 @@
               <h5 class="card-title text-center">{{$product->name}}</h5>
               <ul class="list-group">
                 <li class="precio text-center">$ {{$product->price}}</li>
-                <li class="list-item text-center">{{$product->league_id}}</li>
-                <li class="list-item text-center">{{$product->brand_id}}</li>
-                <li class="list-item text-center">{{$product->description}}</li>
+                {{-- <li class="list-item text-center">{{$product->league_id}}</li>
+                <li class="list-item text-center">{{$product->brand_id}}</li> --}}
+                @if ($product->size)
+                  <li class="precio text-center">TALLE {{$product->size->name}}</li>
+                @endif
+                <li class="list-item text-center">DESCRIPCION <br> {{$product->description}}</li>
               </ul>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Talle..</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-                <option value="4">X Large</option>
-              </select>
               <div class="botonCarrito">
                 <button type="button" class="btn btn-dark">Agregar al Carro</button>
               </div>
