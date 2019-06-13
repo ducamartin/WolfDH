@@ -7,6 +7,7 @@
         <img src="img/PngLigas/ligainglesa.png" alt="LOGO LIG INGLATERRA" width="300px" height="300px">
       </div>
 
+
       @if (session('mensaje'))
          <div class="alert alert-success">
              {{ session('mensaje') }}
@@ -54,9 +55,15 @@
                 @endif
                 <li class="list-item text-center">DESCRIPCION <br> {{$product->description}}</li>
               </ul>
-              <div class="botonCarrito">
+              {{-- <div class="botonCarrito">
                 <button type="button" class="btn btn-dark">Agregar al Carro</button>
-              </div>
+              </div> --}}
+              <form class="" action="/agregarCarrito" method="post">
+                @csrf
+                <div class="botonCarrito">
+                  <button type="submit" name="product_id"  value="{{$product->id}}" class="btn btn-dark">Agregar al Carro</button>
+                </div>
+              </form>
               <div class="botonCarrito">
                 <a class="btn btn-success" href="/edit/{{$product->id}}">Editar</a>
               </div>

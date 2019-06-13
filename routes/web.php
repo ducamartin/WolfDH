@@ -15,6 +15,7 @@ Route::post('/edit/{id}', 'ProductController@update')->middleware('auth');
 Route::get('/edit/{id}', 'ProductController@edit')->middleware('auth');
 Route::get('/agregarProducto', 'ProductController@agregarProducto')->middleware('auth');
 Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth');
+Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
 Route::get('/england', 'ProductController@index');
 
 Route::get('/france', 'ViewController@france');

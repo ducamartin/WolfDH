@@ -60,6 +60,7 @@ class ProductController extends Controller
     return view('england')
     ->with([
       'products' => $products,
+      
     ]);
   }
 

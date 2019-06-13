@@ -25,19 +25,21 @@
                                  document.getElementById('logout-form').submit();">
                     CERRAR SESION
                 </a>
-
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
             </div>
           </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{{'/agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
+          </li>
           @endguest
           <li class="nav-item active">
             <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{{'/agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
-          </li>
+
+
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
