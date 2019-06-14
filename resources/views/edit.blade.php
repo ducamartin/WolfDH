@@ -24,21 +24,23 @@
                   @enderror
               </div>
 
-              {{-- <div  class="form-group col-md-4">
-                  <label for="league_id">Liga</label>
-                  <input class="form-control" type="text" name="league_id" id="league_id"  value="{{old('league_id',$products->league_id)}}">
-                  @error('league_id')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                  @enderror
+              <div class="form-group col-md-4">
+                <label for="">Liga</label>
+                <select class="" name="league_id">
+                  @foreach ($leagues as $league)
+                    <option value="{{$league->id}}">{{$league->name}}</option>
+                  @endforeach
+                </select>
               </div>
 
-              <div  class="form-group col-md-4">
-                  <label for="brand_id">Marca</label>
-                  <input class="form-control" type="text" name="brand_id" id="brand_id"  value="{{old('brand_id',$products->brand_id)}}">
-                  @error('brand_id')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                  @enderror
-              </div> --}}
+              <div class="form-group col-md-4">
+                <label for="">Marca</label>
+                <select class="" name="brand_id">
+                  @foreach ($brands as $brand)
+                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                  @endforeach
+                </select>
+              </div>
 
               <div  class="form-group col-md-4">
                   <label for="description">Descripcion</label>
@@ -50,34 +52,20 @@
 
               <div  class="form-group col-md-4">
                   <label for="imgProduct">Imagen del Producto</label>
-                  <img src="/storage/{{$products->poster}}" width="100px" alt="">
                   Cambiar imagen:<input class="form-control" type="file" name="imgProduct" value="">
                   @error('imgProduct')
                       <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
               </div>
 
-              <div  class="form-group col-md-4">
-                  <label for="size_id">Talle</label>
-                  <select class="" name="size_id">
-                    @foreach ($sizes as $size)
-                      <option value="{{$size->id}}">{{old('size_id',$products->size->name)}}</option>
-                    @endforeach
-                  </select>
-                  {{-- <input class="form-control" type="text" name="size_id" id="size_id" value="{{old('size_id',$products->size->name)}}"> --}}
-                  @error('size_id')
-                      <div class="alert alert-danger">{{ $message }}</div>
-                  @enderror
-              </div>
-
-              {{-- <div class="form-group col-md-4">
+              <div class="form-group col-md-4">
                 <label for="">Talle</label>
                 <select class="" name="size_id">
                   @foreach ($sizes as $size)
                    <option value="{{$size->id}}">{{$size->name}}</option>
                   @endforeach
                 </select>
-              </div> --}}
+              </div>
 
               <button type="submit" name="button" class="btn btn-primary">Guardar</button>
 

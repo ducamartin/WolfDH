@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Size;
+use App\Brand;
+use App\League;
 
 
 class Product extends Model
@@ -16,10 +18,13 @@ class Product extends Model
     return $this->belongsTo(Size::class);
   }
 
-  public function sizes()
+  public function brand()
   {
-    return $this->belongsToMany(Size::class);
+    return $this->belongsTo(Brand::class);
   }
-
+  public function league()
+  {
+    return $this->belongsTo(League::class);
+  }
 
 }
