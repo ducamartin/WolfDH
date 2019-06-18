@@ -23,6 +23,11 @@ footer{
   margin-top: 16px;
 }
 
+.avatar{
+  border-radius: 50%;
+  width:50px;
+}
+
 /* CSS CATEGORIAS INDEX */
 /* .catLiga{
   position: absolute;
@@ -169,7 +174,7 @@ color: Black;
   padding: 0;
 }
 .usuario{
-  
+
 }
 .card{
   border: 0;

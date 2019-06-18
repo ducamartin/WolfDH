@@ -51,6 +51,16 @@
             </div>
 
             <div class="form-group col-md-7">
+              <label for="avatar">Cargar imagen de Avatar</label>
+              <input id="avatar" type="file" name="avatar" class="form-control @error('avatar') is-invalid @enderror" >
+              @error('avatar')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
+            </div>
+
+            <div class="form-group col-md-7">
               <button type="submit">Enviar</button>
             </div>
 

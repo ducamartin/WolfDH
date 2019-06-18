@@ -28,7 +28,7 @@
                 <label for="">Liga</label>
                 <select class="" name="league_id">
                   @foreach ($leagues as $league)
-                    <option value="{{$league->id}}">{{$league->name}}</option>
+                    <option value="{{$league->id}}" {{($league->id == $products->league_id)?'selected':''}}>{{$league->name}}</option>
                   @endforeach
                 </select>
               </div>
@@ -37,7 +37,7 @@
                 <label for="">Marca</label>
                 <select class="" name="brand_id">
                   @foreach ($brands as $brand)
-                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                    <option value="{{$brand->id}}" {{($brand->id == $products->brand_id)?'selected':''}}>{{$brand->name}}</option>
                   @endforeach
                 </select>
               </div>
@@ -62,7 +62,7 @@
                 <label for="">Talle</label>
                 <select class="" name="size_id">
                   @foreach ($sizes as $size)
-                   <option value="{{$size->id}}">{{$size->name}}</option>
+                   <option value="{{$size->id}}" {{($size->id == $products->size_id)?'selected':''}}>{{$size->name}}</option>
                   @endforeach
                 </select>
               </div>
