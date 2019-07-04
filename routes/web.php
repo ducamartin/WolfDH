@@ -18,6 +18,7 @@ Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth')
 Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
 Route::get('/england', 'ProductController@index');
 
+Route::get('/carrito', 'CartController@listar');
 Route::get('/france', 'ViewController@france');
 Route::get('/spain', 'ViewController@spain');
 Route::get('/italy', 'ViewController@italy');
