@@ -18,11 +18,11 @@
                   @foreach($products as $product)
                       <div class="col-md-4">
                           <div class="card-body">
-                              <h5 class="card-title"> {{$product->name}}  </h5>
+                              <h5 class="card-title"> {{$product->product->name}}  </h5>
                               <p class="card-text">Precio</p>
-                              <p class="card-text"><small class="text-muted">Precio {{$product->price}}</small></p>
-                              <p class="card-text"><small class="text-muted">Talle {{$product->size->name}}</small></p>
-                              <p class="card-text"><small class="text-muted">Marca {{$product->brand->name}}</small></p>
+                              <p class="card-text"><small class="text-muted">Precio {{$product->product->price}}</small></p>
+                              <p class="card-text"><small class="text-muted">Talle {{$product->product->size}}</small></p>
+                              <p class="card-text"><small class="text-muted">Marca {{$product->product->brand}}</small></p>
                           </div>
                         </div>
                         @endforeach

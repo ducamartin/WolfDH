@@ -23,7 +23,7 @@ class CartController extends Controller
     }
 
     public function listar(Request $req){
-      $products = Cart::all();
+      $products = Cart::where('user_id', Auth::user()->id)->get() ;
       $sizes = Size::all();
       $brands = Brand::all();
       $leagues = League::all();
