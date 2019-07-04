@@ -51,10 +51,12 @@
             </div>
           </li>
         </ul>
-        <div class="icocompra">
-          <a href="{{'/carrito'}}"><i class="fas fa-shopping-cart"></i></a>
-
-        </div>
+        @guest
+          @else
+          <div class="icocompra">
+            <a href="{{'/carrito'}}"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+        @endguest
 
       </div>
     </nav>
