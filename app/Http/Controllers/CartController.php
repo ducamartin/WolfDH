@@ -41,6 +41,17 @@ class CartController extends Controller
       return view('/carrito');
       }
 
+      public function delete(Request $request)
+      {
+        $id = $request['id'];
+
+        $productoAEliminar = Product::find($id);
+
+        $productoAEliminar -> delete();
+
+        return redirect('/carrito')->with('mensaje', 'Producto eliminado exitosamente del carrito :(');
+      }
+
 
 
     }

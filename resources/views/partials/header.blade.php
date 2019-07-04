@@ -52,7 +52,7 @@
           </li>
         </ul>
         <div class="icocompra">
-          <i class="fas fa-shopping-cart"></i>
+      <a href="{{'/carrito'}}">    <i class="fas fa-shopping-cart"></i></a>
         </div>
 
       </div>
