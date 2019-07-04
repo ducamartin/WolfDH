@@ -18,19 +18,19 @@
          </div>
       @endif
 
-      <div class="row justify-content-center">
-
-        {{-- BARRA LATERAL FILTRO --}}
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            CATEGORIAS - Ligas
-          </div>
-          <ul class="list-group list-group-flush">
-            @foreach ($leagues as $league)
-              <a href="/products/{{$league->id}}">{{ $league->name }}</a><br>
-            @endforeach
-          </ul>
+      {{-- BARRA LATERAL FILTRO --}}
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          CATEGORIAS - Ligas
         </div>
+        <ul class="list-group list-group-flush">
+          @foreach ($leagues as $league)
+            <a href="/products/{{$league->id}}">{{ $league->name }}</a><br>
+          @endforeach
+        </ul>
+      </div>
+
+      <div class="row justify-content-center">
 
       @foreach ($products as $product)
         <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
