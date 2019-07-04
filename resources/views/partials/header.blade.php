@@ -44,15 +44,16 @@
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{'/spain'}}">Liga Española</a>
-              <a class="dropdown-item" href="{{'/england'}}">Liga Inglesa</a>
-              <a class="dropdown-item" href="{{'/france'}}">Liga Francesa</a>
-              <a class="dropdown-item" href="{{'/italy'}}">Liga Italiana</a>
+              @foreach ($leagues as $league)
+                <a class="dropdown-item" href="/products/{{$league->id}}">{{ $league->name }}</a>
+              @endforeach
+             <a class="dropdown-item" href="{{'/products'}}">Todos los Productos</a>
             </div>
           </li>
         </ul>
         <div class="icocompra">
-          <i class="fas fa-shopping-cart"></i>
+          <a href="{{'/carrito'}}"><i class="fas fa-shopping-cart"></i></a>
+
         </div>
 
       </div>

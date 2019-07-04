@@ -7,6 +7,10 @@
         <img src="img/PngLigas/ligainglesa.png" alt="LOGO LIG INGLATERRA" width="300px" height="300px">
       </div>
 
+      <form class="" action="" method="get">
+         <input type="text" name="name" value="" class="form-control">
+         <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
 
       @if (session('mensaje'))
          <div class="alert alert-success">
@@ -15,7 +19,20 @@
       @endif
 
       <div class="row justify-content-center">
-        @foreach ($products as $product)
+
+        {{-- BARRA LATERAL FILTRO --}}
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            CATEGORIAS - Ligas
+          </div>
+          <ul class="list-group list-group-flush">
+            @foreach ($leagues as $league)
+              <a href="/products/{{$league->id}}">{{ $league->name }}</a><br>
+            @endforeach
+          </ul>
+        </div>
+
+      @foreach ($products as $product)
         <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
           <div class="card1 cardCam">
             <div id="ligaIng1" class="carousel slide" data-ride="carousel">

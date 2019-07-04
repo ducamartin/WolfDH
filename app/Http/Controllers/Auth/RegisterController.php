@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Product;
+use App\League;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -35,25 +37,25 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+  public function __construct()
+  {
+      $this->middleware('guest');
+  }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+  /**
+   * Get a validator for an incoming registration request.
+   *
+   * @param  array  $data
+   * @return \Illuminate\Contracts\Validation\Validator
+   */
+  protected function validator(array $data)
+  {
+      return Validator::make($data, [
+          'name' => ['required', 'string', 'max:255'],
+          'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+          'password' => ['required', 'string', 'min:8', 'confirmed'],
+      ]);
+  }
 
     /**
      * Create a new user instance after a valid registration.
@@ -61,22 +63,34 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-      $nombreArchivo = 'user_default.png';
-      //debemos tener en cuenta que si hay nun archivo, lo subimos y le guardamos la ruta
-      if(isset($data['avatar'])){
-        //al archivo que subi lo voy a guardar en el filesystem de laravel
-        $rutaDelArchivo = $data['avatar']->store('public');
-        //le saco solo el nombre
-        $nombreArchivo = basename($rutaDelArchivo);
-      }
-
-      return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'avatar' => $nombreArchivo,
-        ]);
+  protected function create(array $data)
+  {
+    $nombreArchivo = 'user_default.png';
+    //debemos tener en cuenta que si hay nun archivo, lo subimos y le guardamos la ruta
+    if(isset($data['avatar'])){
+      //al archivo que subi lo voy a guardar en el filesystem de laravel
+      $rutaDelArchivo = $data['avatar']->store('public');
+      //le saco solo el nombre
+      $nombreArchivo = basename($rutaDelArchivo);
     }
+
+    return User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'avatar' => $nombreArchivo,
+    ]);
+  }
+
+  public function showRegistrationForm()
+  {
+    $products = Product::all();
+    $leagues = League::all();
+
+    return view('auth/register')
+    ->with([
+      'products' => $products,
+      'leagues' =>$leagues
+    ]);
+  }
 }

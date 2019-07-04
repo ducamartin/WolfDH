@@ -16,12 +16,15 @@ Route::get('/edit/{id}', 'ProductController@edit')->middleware(['auth', 'admin']
 Route::get('/agregarProducto', 'ProductController@agregarProducto')->middleware(['auth', 'admin']);
 Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth');
 Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
-Route::get('/england', 'ProductController@index');
+Route::get('/products', 'ProductController@index');
+Route::get('/products/{id}', 'ProductController@filterLeague');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFB');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFB');
+Route::get('login/google', 'Auth\LoginController@redirectToProviderGG');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGG');
 
 Route::get('/carrito', 'CartController@listar');
-Route::get('/france', 'ViewController@france');
-Route::get('/spain', 'ViewController@spain');
-Route::get('/italy', 'ViewController@italy');
 Route::get('/contact', 'ViewController@contact');
 Route::get('/faqs', 'ViewController@faqs');
 Route::get('/', 'ViewController@index');
