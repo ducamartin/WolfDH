@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
+use App\League;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $products = Product::all();
+      $leagues = League::all();
+        return view('index')
+        ->with([
+          'products' => $products,
+          'leagues' =>$leagues
+        ]);
     }
 }

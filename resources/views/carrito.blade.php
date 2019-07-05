@@ -53,7 +53,7 @@
                             <li class="list-item text-center">LIGA {{$product->product->league->name}}</li>
                             <li class="list-item text-center">MARCA {{$product->product->brand->name}}</li>
                             <li class="precio text-center">TALLE {{$product->product->size->name}}</li>
-                            <li class="list-item text-center">DESCRIPCION <br> {{$product->product->description}}</li>
+                            {{-- <li class="list-item text-center">DESCRIPCION <br> {{$product->product->description}}</li> --}}
                           </ul>
                       </div>
                     </div>
