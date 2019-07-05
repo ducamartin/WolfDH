@@ -52,7 +52,7 @@ class ProductController extends Controller
 
     $productoNuevo->save();
 
-    return redirect('/england')->with('mensaje', 'Producto creado exitosamente!');
+    return redirect('/products')->with('mensaje', 'Producto creado exitosamente!');
 
   }
 
@@ -75,85 +75,106 @@ class ProductController extends Controller
 
   public function index(){
     $products = Product::all();
-    return view('england')
+    $leagues = League::all();
+
+    if(isset($_GET['name'])){
+      $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
+    } else{
+      $products = Product::all();
+    }
+
+    return view('products')
     ->with([
       'products' => $products,
+      'leagues' =>$leagues,
+    ]);
+  }
 
+  public function filterLeague($id){
+    $leagues = League::all();
+    $league = League::find($id);
+
+    return view('filterLeague')
+    ->with([
+      'league'=>$league,
+      'leagues' =>$leagues,
     ]);
   }
 
   public function edit($id)
-    {
-      $products = Product::find($id);
-      $sizes = Size::all();
-      $brands = Brand::all();
-      $leagues = League::all();
+  {
+    $products = Product::find($id);
+    $sizes = Size::all();
+    $brands = Brand::all();
+    $leagues = League::all();
 
-      return view('edit')
+    return view('edit')
+    ->with([
+      'products' => $products,
+      'sizes' =>$sizes,
+      'brands' =>$brands,
+      'leagues' =>$leagues
+    ]);
+  }
+
+  public function update($id, Request $request)
+  {
+    $this->validate($request,
+      [
+        'name'=> 'required',
+        'price'=> 'required|numeric',
+        'description'=> 'required',
+        'imgProduct' => 'nullable|image'
+      ],
+      [
+        'required' => 'Campo obligatorio',
+        'numeric' => 'Debe ser un numero',
+        'image' => 'Imagen invalida'
+      ]
+    );
+      //dd($request->title);
+      //me traigo a la pelicula usando el find
+      $productoAEditar = Product::find($id);
+
+      //le cambio los atributos o valores al objeto que me traje arriba
+      $productoAEditar->name = $request->name;
+      $productoAEditar->price = $request->price;
+      $productoAEditar->description = $request->description;
+      // $productoAEditar->sizes()->attach($request->size_id);
+      $productoAEditar->size_id = $request->input('size_id');
+      $productoAEditar->brand_id = $request->input('brand_id');
+      $productoAEditar->league_id = $request->input('league_id');
+
+      if($request->file('imgProduct')){
+        //al archivo que subi lo voy a guardar en el filesystem de laravel
+        $rutaDelArchivo = $request->file('imgProduct')->store('public');
+        //le saco solo el nombre
+        $nombreArchivo = basename($rutaDelArchivo);
+        //guardo el nombre del archivo en el campo poster
+        $productoAEditar->imgProduct = $nombreArchivo;
+      }
+
+      //lo mando a guardar
+      $productoAEditar->save();
+
+      return redirect('/products')
       ->with([
-        'products' => $products,
-        'sizes' =>$sizes,
-        'brands' =>$brands,
-        'leagues' =>$leagues
+        'mensaje', 'Producto modificado exitosamente!'
       ]);
+  }
 
-    }
+  public function delete(Request $request)
+  {
+    $id = $request['id'];
 
-    public function update($id, Request $request)
-      {
-        $this->validate($request,
-          [
-            'name'=> 'required',
-            'price'=> 'required|numeric',
-            'description'=> 'required',
-            'imgProduct' => 'nullable|image'
-          ],
-          [
-            'required' => 'Campo obligatorio',
-            'numeric' => 'Debe ser un numero',
-            'image' => 'Imagen invalida'
-          ]
-        );
-          //dd($request->title);
-          //me traigo a la pelicula usando el find
-          $productoAEditar = Product::find($id);
+    $productoAEliminar = Product::find($id);
 
-          //le cambio los atributos o valores al objeto que me traje arriba
-          $productoAEditar->name = $request->name;
-          $productoAEditar->price = $request->price;
-          $productoAEditar->description = $request->description;
-          // $productoAEditar->sizes()->attach($request->size_id);
-          $productoAEditar->size_id = $request->input('size_id');
-          $productoAEditar->brand_id = $request->input('brand_id');
-          $productoAEditar->league_id = $request->input('league_id');
+    $productoAEliminar -> delete();
 
-          if($request->file('imgProduct')){
-            //al archivo que subi lo voy a guardar en el filesystem de laravel
-            $rutaDelArchivo = $request->file('imgProduct')->store('public');
-            //le saco solo el nombre
-            $nombreArchivo = basename($rutaDelArchivo);
-            //guardo el nombre del archivo en el campo poster
-            $productoAEditar->imgProduct = $nombreArchivo;
-          }
-
-          //lo mando a guardar
-          $productoAEditar->save();
-
-          return redirect('/england')->with('mensaje', 'Producto modificado exitosamente!');
-
-
-      }
-
-      public function delete(Request $request)
-      {
-        $id = $request['id'];
-
-        $productoAEliminar = Product::find($id);
-
-        $productoAEliminar -> delete();
-
-        return redirect('/england')->with('mensaje', 'Producto eliminadoi exitosamente!');
-      }
-
+    return redirect('/products')
+    ->with([
+      'mensaje', 'Producto eliminadoi exitosamente!'
+    ]);
+  }
 
 }

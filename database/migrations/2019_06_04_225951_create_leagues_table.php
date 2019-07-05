@@ -16,6 +16,7 @@ class CreateLeaguesTable extends Migration
         Schema::create('leagues', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('imgLeague', 200)->nullable()->default('default.png');
             $table->timestamps();
         });
     }

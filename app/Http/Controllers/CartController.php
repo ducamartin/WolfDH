@@ -19,7 +19,10 @@ class CartController extends Controller
 
       $user->cart()->attach($product_id);
 
-      return redirect ('/england')->with('mensaje', 'Producto agregado exitosamente al carrito!');
+      return redirect ('/products')
+      ->with(
+        'mensaje', 'Producto agregado exitosamente al carrito!'
+      );
     }
 
     public function listar(Request $req){
@@ -33,25 +36,8 @@ class CartController extends Controller
         'sizes' =>$sizes,
         'brands' =>$brands,
         'leagues' =>$leagues
-
       ]);
 
-
-
       return view('/carrito');
-      }
-
-      public function delete(Request $request)
-      {
-        $id = $request['id'];
-
-        $productoAEliminar = Product::find($id);
-
-        $productoAEliminar -> delete();
-
-        return redirect('/carrito')->with('mensaje', 'Producto eliminado exitosamente del carrito :(');
-      }
-
-
-
     }
+}
