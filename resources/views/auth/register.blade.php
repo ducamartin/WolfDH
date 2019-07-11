@@ -13,7 +13,7 @@
           <div class="row justify-content-center">
             <div class="col-md-7">
               <label for="name">Nombre</label>
-              <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+              <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
               @error('name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
 
             <div class="form-group col-md-7">
               <label for="email">Email</label>
-              <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+              <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
               @error('email')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
             <!--PASS  -->
             <div class="form-group col-md-7">
               <label for="password">Contraseña</label>
-              <input id="password" type="password" name="password" value="" class="form-control @error('password') is-invalid @enderror" required autocomplete="new-password">
+              <input id="password" type="password" name="password" value="" class="form-control @error('password') is-invalid @enderror"  autocomplete="new-password">
               @error('password')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
             <!--CON PASS  -->
             <div class="form-group col-md-7">
               <label for="password-confirm">Confirmar contraseña</label>
-              <input id="password-confirm" type="password" name="password_confirmation" class="form-control" required autocomplete="new-password">
+              <input id="password-confirm" type="password" name="password_confirmation" class="form-control"  autocomplete="new-password">
             </div>
 
             <div class="form-group col-md-7">
@@ -67,4 +67,5 @@
           </div>
       </form>
   </div>
+  <script type="text/javascript" src="/js/auth/register.js"></script>
 @endsection

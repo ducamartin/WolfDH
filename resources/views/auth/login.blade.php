@@ -12,7 +12,8 @@
         <div class="row justify-content-center">
             <div class="form-group col-md-7">
               <label for="email">Email</label>
-              <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" id="email" value="" required autocomplete="email" autofocus>
+                {{-- EL VALUE LO DEJO VACIO PARA QUE NO PERSISTA CUANDO INGRESAN MAL EL USUARIO Y/O CONTRASEÑA value="{{ old('email') }}" --}}
               @error('email')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -63,4 +64,5 @@
     </form>
 
 </div>
+<script type="text/javascript" src="/js/auth/login.js"></script>
 @endsection
