@@ -124,10 +124,57 @@ i{
 
 
 /* CSS PRODUCTOS:PHP  */
+
+.tipoLetra{
+  color: black;
+  text-decoration: none !important;
+  text-align: center;
+}
+.busqueda{
+  margin-bottom: 50px;
+}
+.filtroBusqueda{
+  padding: 0;
+  max-width: 100%;
+  height: 30px;
+  margin: 0;
+
+}
+.ulHeader, .search, .ulHeader a{
+  padding: 0;
+}
+.filtro:hover, .botonBusqueda:hover{
+  background-color: black;
+  color: white !important;
+  border-color: black;
+}
+.ulHeader a{
+  padding: 6px 0;
+}
+.filtro{
+  border: solid 1px black;
+  border-radius: 1px;
+  background: white;
+  color: black !important;
+}
+.search{
+  padding: 0;
+}
+.cuadroBusqueda{
+  border: solid 1px black;
+  border-radius: 1px;
+  background: white;
+}
+.botonBusqueda{
+  border: solid 1px black;
+  border-radius: 1px;
+  background: white;
+  color: black !important;
+}
 .cajacat1 {
     border: solid 1px black;
     background-color: white;
-    margin:  20px 35px;
+    margin:  20px 10px;
     justify-content: center;
 }
 .botonCarrito{
@@ -135,7 +182,7 @@ i{
   text-align: center;
 }
 .cajacat1 .card-body{
-  padding: 5px;
+  padding: 10px;
 }
 .card-title {
 font-family: 'Rubik', sans-serif;
@@ -274,4 +321,10 @@ text-align: center  !important;
     left: 14%;
     width: 72%;
   }
+}
+@media (max-width: 575px) {
+  .ulHeader{
+    margin-top: -8px;
+  }
+
 }
