@@ -56,7 +56,15 @@
                             {{-- <li class="list-item text-center">DESCRIPCION <br> {{$product->product->description}}</li> --}}
                           </ul>
                       </div>
+
+                      <form class="" action="/borrarCarrito" method="post">
+                          @csrf
+                          <input type="hidden" name="id" value="{{$product->id}}">
+                          <button type="submit" name="button" class="btn btn-danger">Eliminar del Carrito</button>
+                      </form>
                     </div>
+
+
                   @endforeach
             </div>
       {{-- </div> --}}
