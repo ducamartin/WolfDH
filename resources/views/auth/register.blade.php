@@ -13,7 +13,9 @@
           <div class="row justify-content-center">
             <div class="col-md-7">
               <label for="name">Nombre</label>
-              <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
+
+              <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+              
               @error('name')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -67,5 +69,9 @@
           </div>
       </form>
   </div>
+<
+  <script type="text/javascript"  src= "/js/auth/register.js">  </script>
+
   <script type="text/javascript" src="/js/auth/register.js"></script>
+
 @endsection

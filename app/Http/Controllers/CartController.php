@@ -40,4 +40,14 @@ class CartController extends Controller
 
       return view('/carrito');
     }
+
+    public function borrar(Request $req){
+      $id= $req["id"];
+
+      $productUser= Cart::find($id);
+
+      $productUser->delete();
+
+    return  redirect('/carrito');
+    }
 }
