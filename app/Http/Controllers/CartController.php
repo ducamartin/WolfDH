@@ -41,13 +41,11 @@ class CartController extends Controller
       return view('/carrito');
     }
 
-    public function borrar(Request $req){
-      $id= $req["id"];
+    public function borrar($id){
 
       $productUser= Cart::find($id);
-
       $productUser->delete();
 
-    return  redirect('/carrito');
+      return response()->json(['eliminado' => true], 200);
     }
 }
