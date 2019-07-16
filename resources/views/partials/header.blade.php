@@ -32,9 +32,15 @@
             </div>
           </li>
 
-          <li class="nav-item active">
-            <a class="nav-link" href="{{'/agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
-          </li>
+          @auth
+            @if (Auth::user()->is_admin)
+              <li class="nav-item active">
+                <a class="nav-link" href="{{'/agregarProducto'}}">AGREGAR PRODUCTOS <span class="sr-only">(current)</span></a>
+              </li>
+            @endif
+          @endauth
+
+
           @endguest
           <li class="nav-item active">
             <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>

@@ -4,13 +4,41 @@
   <div class="container-fluid">
     <div class="registro">
       <div class="row justify-content-center">
-        <img src="img/PngLigas/ligainglesa.png" alt="LOGO LIG INGLATERRA" width="300px" height="300px">
+        <img src="/img/PngLigas/wolf_negro.png" alt="LOGO Wolf" width="350px" height="350px">
       </div>
 
-      <form class="" action="" method="get">
-         <input type="text" name="name" value="" class="form-control">
-         <button type="submit" class="btn btn-primary">Buscar</button>
-      </form>
+      <div class="busqueda row justify-content-center">
+        <div class="col-xs-12 col-sm-6  col-md-6 filtroBusqueda">
+          <ul class="nav-item dropdown ulHeader">
+            <a class="filtro nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIAS - Ligas</a>
+            <div class="row">
+              <div class="dropdown-menu  col-md-12 justify-content-center" aria-labelledby="navbarDropdownMenuLink">
+                @foreach ($leagues as $league)
+                  <a class="tipoLetra col-md-6" href="/products/{{$league->id}}">{{ $league->name }}</a><br>
+                @endforeach
+                <a class="tipoLetra col-md-6" href="{{'/products'}}">Todos los Productos</a>
+              </div>
+
+            </div>
+          </ul>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 filtroBusqueda">
+          <form class="" action="" method="get">
+            <div class="row">
+              <div class="col-xs-9 col-sm-8 col-md-8 search">
+                <input type="text" name="name" value="" class="cuadroBusqueda form-control" placeholder="Ingrese una palabra">
+              </div>
+              <div class="col-xs-3 col-sm-4 col-md-4 search">
+                <button type="submit" class="btn btn-block btn-primary botonBusqueda" >Buscar</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
 
       @if (session('mensaje'))
          <div class="alert alert-success">
@@ -18,22 +46,10 @@
          </div>
       @endif
 
-      {{-- BARRA LATERAL FILTRO --}}
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          CATEGORIAS - Ligas
-        </div>
-        <ul class="list-group list-group-flush">
-          @foreach ($leagues as $league)
-            <a href="/products/{{$league->id}}">{{ $league->name }}</a><br>
-          @endforeach
-        </ul>
-      </div>
-
       <div class="row justify-content-center">
 
       @foreach ($products as $product)
-        <div class="cajacat1 col-xs-8 col-sm-4 col-md-2">
+        <div class="cajacat1 col-xs-12 col-sm-5 col-md-3">
           <div class="card1 cardCam">
             <div id="ligaIng1" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
