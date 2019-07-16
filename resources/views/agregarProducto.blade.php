@@ -70,7 +70,7 @@
         </div>
 
         <div class="form-group col-md-7">
-          <button type="submit" name="button" class="btn btn-primary">Agregar Producto</button>          
+          <button type="submit" name="button" class="btn btn-primary">Agregar Producto</button>
         </div>
 
 
@@ -78,6 +78,8 @@
     </form>
   </div>
 </div>
+
+<script type="text/javascript" src="/js/validaciones/agregarProducto.js"></script>
 
 
 @endsection
