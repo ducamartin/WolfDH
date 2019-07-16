@@ -4,11 +4,7 @@
   <div class="container-fluid">
     <div class="registro">
       <div class="row justify-content-center">
-<<<<<<< HEAD
         <img src="/img/PngLigas/wolf_negro.png" alt="LOGO Wolf" width="350px" height="350px">
-=======
-        <img src="/img/PngLigas/ligainglesa.png" alt="LOGO LIG INGLATERRA" width="300px" height="300px">
->>>>>>> e288ea7dd5f9e74960bfdee78532cb7cb7eb696f
       </div>
 
       <div class="busqueda row justify-content-center">
