@@ -16,7 +16,6 @@ Route::get('/edit/{id}', 'ProductController@edit')->middleware(['auth', 'admin']
 Route::get('/agregarProducto', 'ProductController@agregarProducto')->middleware(['auth', 'admin']);
 Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth');
 Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
-Route::post('/borrarCarrito', 'CartController@borrar')->middleware('auth');
 Route::get('/products', 'ProductController@index');
 Route::get('/products/{id}', 'ProductController@filterLeague');
 
