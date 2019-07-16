@@ -111,10 +111,14 @@ footer{
 }
 .pie p{
   padding: 10px;
-  color: white;
 }
 .pie a {
-color: white;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
+.pie p:hover {
+  text-decoration: underline overline;
 }
 .pie-iconos, .icocompra, .icocont{
   display: flex;
