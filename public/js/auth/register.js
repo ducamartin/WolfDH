@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-
-var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
- function validarVacio(input) {
-    if (input.value == '') {
-        pintarError(input, 'Debe de estar lleno');
-        return true;
-    }
-    return false
-}
-
- function pintarError(input, mensaje) {
-    input.classList.add('is-invalid');
-    var error = document.createElement('span');
-    error.setAttribute('class','invalid-feedback');
-    var strong = document.createElement('strong');
-    strong.innerText = mensaje;
-    var div = elemento.parentElement;
-    if (div.children[2]) {
-        div.removeChild(div.children[2]);
-    }
-    error.append(strong);
-    div.append(error);
-}
-
- window.onload = function () {
-    var form = document.querySelector('form');
-
-     // email.onblur = function () {
-    //     if (regexEmail.test(this.value)) {
-    //         this.classList.remove('is-invalid');
-    //     }
-    // }
-
-     form.onsubmit = function (event) {
-=======
 var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
 function validarVacio(input) {
@@ -147,7 +110,6 @@ window.onload = function () {
 
 
     form.onsubmit = function (event) {
->>>>>>> caf942198574931a53a291a09ce73747f21dfd8e
         var elementos = this.elements;
         for (elemento of elementos) {
             if (elemento.type == 'submit' || elemento.type == 'hidden') {

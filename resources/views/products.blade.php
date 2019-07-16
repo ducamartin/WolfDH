@@ -82,9 +82,15 @@
                   <button type="submit" name="product_id"  value="{{$product->id}}" class="btn btn-dark">Agregar al Carro</button>
                 </div>
               </form>
-              <div class="botonCarrito">
-                <a class="btn btn-success" href="/edit/{{$product->id}}">Editar</a>
-              </div>
+
+              @auth
+                @if (Auth::user()->is_admin)
+                  <div class="botonCarrito">
+                    <a class="btn btn-success" href="/edit/{{$product->id}}">Editar</a>
+                  </div>
+                @endif
+              @endauth
+              
           </div>
         </div>
       @endforeach
