@@ -40,4 +40,13 @@ class ViewController extends Controller
     ]);
   }
 
+  public function profile(){
+    $products = Product::all();
+    $leagues = League::all();
+    return view('perfil')
+    ->with([
+      'products' => $products,
+      'leagues' =>$leagues
+    ]);
+  }
 }
