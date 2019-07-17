@@ -18,6 +18,7 @@ Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth')
 Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
 Route::get('/products', 'ProductController@index');
 Route::get('/products/{id}', 'ProductController@filterLeague');
+Route::get('/perfil', 'ViewController@profile');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFB');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFB');
