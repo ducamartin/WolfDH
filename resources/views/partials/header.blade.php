@@ -40,22 +40,15 @@
             @endif
           @endauth
 
-
           @endguest
           <li class="nav-item active">
             <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
           </li>
 
-
           <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              @foreach ($leagues as $league)
-                <a class="dropdown-item" href="/products/{{$league->id}}">{{ $league->name }}</a>
-              @endforeach
-             <a class="dropdown-item" href="{{'/products'}}">Todos los Productos</a>
-            </div>
+            <a class="nav-link" href="{{'/products'}}">PRODUCTOS<span class="sr-only">(current)</span></a>
           </li>
+
         </ul>
         @guest
           @else

@@ -29,7 +29,7 @@ footer{
 }
 
 .saludoUser{
-  margin: 25px 50px;
+  margin: 25px auto;
 
 }
 
@@ -181,10 +181,18 @@ i{
   color: black !important;
 }
 .cajacat1 {
-    border: solid 1px black;
-    background-color: white;
-    margin:  20px 10px;
-    justify-content: center;
+  border: solid 1px black;
+  background-color: white;
+  margin:  20px 10px;
+  justify-content: center;
+}
+.totalCarrito{
+  height: 350px;
+  text-align: left;
+  padding: 30px;
+}
+.totalCarrito h4{
+  font-size: 1.2rem;
 }
 .botonCarrito{
   margin: 10px 0;
@@ -311,6 +319,14 @@ text-align: center  !important;
   border-radius: 0;
 }
 
+#logoCarrito{
+  width: 500px;
+  height: auto;
+  }
+#eliminarCarrito{
+  padding: 8px;
+  margin-bottom: 15px;
+}
 
 /* imgen oculta */
 .imgA{
@@ -334,6 +350,12 @@ text-align: center  !important;
 @media (max-width: 575px) {
   .ulHeader{
     margin-top: -8px;
+  }
+
+}
+@media (max-width: 545px) {
+  #logoCarrito{
+    width: 300px;
   }
 
 }

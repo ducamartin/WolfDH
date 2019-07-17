@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
           $table->string('imgProduct', 200)->nullable()->default('default.png');
           $table->unsignedBigInteger('size_id')->nullable();;
           $table->float('price');
+          $table->integer('cantProd')->default(1);
           $table->unsignedBigInteger('league_id')->nullable();;
           $table->unsignedBigInteger('brand_id')->nullable();;
           $table->timestamps();
