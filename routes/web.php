@@ -18,12 +18,14 @@ Route::post('/agregarProducto', 'ProductController@agregar')->middleware('auth')
 Route::post('/agregarCarrito', 'CartController@agregar')->middleware('auth');
 Route::get('/products', 'ProductController@index');
 Route::get('/products/{id}', 'ProductController@filterLeague');
-Route::get('/perfil', 'ViewController@profile');
 
 Route::get('login/facebook', 'Auth\LoginController@redirectToProviderFB');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFB');
 Route::get('login/google', 'Auth\LoginController@redirectToProviderGG');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGG');
+
+Route::post('/perfil', 'ViewController@updateProfile');
+Route::get('/perfil', 'ViewController@profile');
 
 Route::get('/carrito', 'CartController@listar');
 Route::get('/contact', 'ViewController@contact');

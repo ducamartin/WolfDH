@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\League;
+use App\User;
 
 
 class ViewController extends Controller
@@ -41,12 +42,10 @@ class ViewController extends Controller
   }
 
   public function profile(){
-    $products = Product::all();
-    $leagues = League::all();
-    return view('perfil')
-    ->with([
-      'products' => $products,
-      'leagues' =>$leagues
-    ]);
+    return view('perfil');
+  }
+  public function updateProfile(Request $request){
+
+    return view('perfil');
   }
 }
