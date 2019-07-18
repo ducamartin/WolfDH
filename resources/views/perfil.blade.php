@@ -95,7 +95,7 @@
 </div>
 
 
-<script type="text/javascript" src="/js/validaciones/validarPerfil.js"></script>
+<script type="text/javascript" src="js/validaciones/validarPerfil.js"></script>
 
 
 
