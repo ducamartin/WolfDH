@@ -12,11 +12,11 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{'/login'}}">INICIAR SESION <span class="sr-only">(current)</span></a>
-          </li  class="nav-item active">
+          </li>
           @else
-          <li class="nav-item dropdown">
+            <img src="/storage/{{Auth::user()->avatar}}" alt="" class="avatar">
+          <li class="nav-item dropdown perfil">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <img src="/storage/{{Auth::user()->avatar}}" alt="" class="avatar">
                 Bienvenido {{ Auth::user()->name }}! <span class="caret"></span>
             </a>
 
@@ -48,7 +48,7 @@
             <a class="nav-link" href="{{'/faqs'}}">PREGUNTAS FRECUENTES <span class="sr-only">(current)</span></a>
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item active">
             <a class="nav-link" href="{{'/products'}}">PRODUCTOS<span class="sr-only">(current)</span></a>
           </li>
 
