@@ -68,8 +68,8 @@ class ViewController extends Controller
 
 
       return redirect('/perfil')
-      ->with([
+      ->with(
         'mensaje', 'Perfil editado exitosamente!'
-      ]);
+      );
 }
 }
