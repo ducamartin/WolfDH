@@ -44,14 +44,14 @@ class ViewController extends Controller
   public function profile(){
     return view('perfil');
   }
-  public function updateProfile(Request $request){
-      $UpdateProfile= new User();
+  public function updateProfile(Request $request)
+  {
+      $UpdateProfile = \Auth::user();
 
       $UpdateProfile->avatar = $request['avatar'];
       $UpdateProfile->name = $request['name'];
       $UpdateProfile->street =  $request['street'];
       $UpdateProfile->town = $request['town'];
-    
       $UpdateProfile->state = $request['state'];
 
       $UpdateProfile->save();
