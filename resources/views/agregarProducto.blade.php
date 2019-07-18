@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid ">
   <div class="registro">
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="" id="formulario" enctype="multipart/form-data">
       @csrf
       <div class="row justify-content-center">
         <h2>PRODUCTO A AGREGAR</h2>
@@ -11,7 +11,7 @@
       <div class="row justify-content-center">
         <div class="form-group col-md-7">
           <label for="name">Nombre de la Camiseta</label>
-          <input class="form-control" type="text" name="name"
+          <input class="form-control" type="text" id="name" name="name"
           id="name" value="{{ old('name') }}">
           @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -28,7 +28,7 @@
 
         <div class="form-group col-md-7">
           <label for="">Marca</label>
-          <select class="" name="brand_id">
+          <select class="" id="brand" name="brand_id">
             <option disabled selected value="0">Seleccionar Marca</option>
             @foreach ($brands as $brand)
               <option value="{{$brand->id}}">{{$brand->name}}</option>
@@ -38,7 +38,7 @@
 
         <div class="form-group col-md-7">
           <label for="">Liga</label>
-          <select class="" name="league_id">
+          <select class="" id="league" name="league_id">
             <option disabled selected value="0">Seleccionar Liga</option>
             @foreach ($leagues as $league)
               <option value="{{$league->id}}">{{$league->name}}</option>
@@ -56,7 +56,7 @@
 
         <div  class="form-group col-md-7">
           <label for="imgProduct">Imagen del Producto</label>
-          Cambiar imagen:<input class="form-control" type="file" name="imgProduct" value="">
+          Cambiar imagen:<input class="form-control" type="file" id="imgProduct" name="imgProduct" value="">
           @error('imgProduct')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
@@ -64,7 +64,7 @@
 
         <div class="form-group col-md-7">
           <label for="">Talle</label>
-          <select class="" name="size_id">
+          <select class="" id="size" name="size_id">
               <option disabled selected value="0">Seleccionar Talle</option>
             @foreach ($sizes as $size)
               <option value="{{$size->id}}">{{$size->name}}</option>
