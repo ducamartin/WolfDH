@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container-fluid registro">
-  <form method="post" action="/perfil" enctype="multipart/form-data">
+  <form method="post" action="/perfil" id="perfil" enctype="multipart/form-data">
+
       @csrf
       <div class="row justify-content-center"><br>
         <h2>Editar perfil</h2>
@@ -44,10 +45,16 @@
         <div class="form-group col-md-7">
            <label for="street">Domicilio</label>
            <input type="text" class="form-control" id="street" name="street" value="{{ Auth::user()->street }}">
+           @error('street')
+             <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
          </div>
         <div class="form-group col-md-7">
            <label for="state">Provincia</label>
            <select id="state" name="state" class="form-control" value="{{ Auth::user()->state }}">
+             @error('state')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
                  <option disabled selected>Seleccionar Provincia</option>
                  <option>Buenos Aires</option>
                  <option>Ciudad Autónoma de Buenos Aires</option>
@@ -74,20 +81,27 @@
                  <option>Tierra del Fuego</option>
                  <option>Tucuman</option>
              </select>
+
           </div>
 
         <div class="form-group col-md-7">
            <label for="town">Localiad/Ciudad</label>
            <input type="text" class="form-control" id="town" name="town" placeholder="" value="{{ Auth::user()->town}}">
+           @error('town')
+             <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
          </div>
 
         <div class="form-group col-md-7">
            <label for="zipcode">Código Postal</label>
            <input type="text" class="form-control" id="zipcode" name="zipcode" value="{{ Auth::user()->zipcode}}">
+           @error('zipcode')
+             <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
          </div>
 
         <div class="form-group col-md-7">
-           <button type="submit">Enviar</button>
+           <button type="submit" name"button">Enviar</button>
          </div>
 
      </div>
