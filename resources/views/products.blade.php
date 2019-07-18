@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <div class="registro">
       <div class="row justify-content-center">
-        <img src="/img/PngLigas/wolf_negro.png" alt="LOGO Wolf" width="350px" height="350px">
+      <a href="{{'products'}}">  <img src="/img/PngLigas/wolf_negro.png" alt="LOGO Wolf" width="350px" height="350px"></a>
       </div>
 
       <div class="busqueda row justify-content-center">
