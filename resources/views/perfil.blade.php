@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-fluid registro">
-  <form method="post" action="" enctype="multipart/form-data">
+  <form method="post" action="/perfil" enctype="multipart/form-data">
       @csrf
       <div class="row justify-content-center"><br>
         <h2>Editar perfil</h2>
@@ -12,7 +12,8 @@
       <div class="row justify-content-center">
 
         <div class="form-group col-md-3">
-          <label for="avatar">Cargar imagen de Avatar</label>
+          <label for="avatar">Cambiar Avatar</label>
+          <img src="/storage/{{Auth::user()->avatar}}" alt="" class="avatar">
           <input id="avatar" type="file" name="avatar" class="form-control" >
           @error('avatar')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -33,7 +34,7 @@
 
         <div class="form-group col-md-7">
            <label for="street">Domicilio</label>
-           <input type="text" class="form-control" id="street" placeholder="">
+           <input type="text" class="form-control" id="street" name="street" placeholder="">
          </div>
         <div class="form-group col-md-7">
            <label for="state">Provincia</label>
