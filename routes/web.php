@@ -24,8 +24,8 @@ Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallba
 Route::get('login/google', 'Auth\LoginController@redirectToProviderGG');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGG');
 
-Route::post('/perfil', 'ViewController@updateProfile');
-Route::get('/perfil', 'ViewController@profile');
+Route::post('/perfil', 'ViewController@updateProfile')->middleware('auth');
+Route::get('/perfil', 'ViewController@profile')->middleware('auth');
 
 Route::get('/carrito', 'CartController@listar');
 Route::get('/contact', 'ViewController@contact');
