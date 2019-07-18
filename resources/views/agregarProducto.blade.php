@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="/js/validaciones/agregarProducto.js"></script>
+<script type="text/javascript" src="/js/validaciones/productos.js"></script>
 
 
 @endsection

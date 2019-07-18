@@ -1,6 +1,6 @@
-var letrasNumeros = /^[a-zA-Z0-9._-]+$/;
+var letrasNumeros = /^[a-zA-Z 0-9._-]+$/;
 var numeros = /^[0-9]+$/;
-
+var imagenTipo = /.[jpeg|jpg|png]$/;
 
 window.onload = function () {
   var formulario = document.querySelector('#formulario');
@@ -13,15 +13,46 @@ window.onload = function () {
   var imgProduct = document.getElementById('imgProduct');
   var foto = imgProduct.files[0];
 
+  name.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  price.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  brand.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  league.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  description.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  size.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
+  imgProduct.onfocus = function () {
+      this.classList.remove('is-invalid');
+  }
 
   formulario.onsubmit = function (event) {
-    //
 
     if (name.value.trim() == '') {
       name.classList.add('is-invalid');
       var error = document.createElement('span');
       error.setAttribute('class','invalid-feedback');
       error.innerText = 'El campo NOMBRE no puede estar vacio!';
+      var div = name.parentElement;
+      if (div.children[2]) {
+          div.removeChild(div.children[2]);
+      }
+      div.append(error);
+      event.preventDefault();
+    }else if (!letrasNumeros.test(name.value)) {
+      name.classList.add('is-invalid');
+      var error = document.createElement('span');
+      error.setAttribute('class','invalid-feedback');
+      error.innerText = 'El campo NOMBRE no puede tener carácteres especiales!';
       var div = name.parentElement;
       if (div.children[2]) {
           div.removeChild(div.children[2]);
@@ -41,14 +72,12 @@ window.onload = function () {
       }
       div.append(error);
       event.preventDefault();
-    }
-
-    if (description.value.trim() == '') {
-      description.classList.add('is-invalid');
+    }else if (!numeros.test(price.value)) {
+      price.classList.add('is-invalid');
       var error = document.createElement('span');
       error.setAttribute('class','invalid-feedback');
-      error.innerText = 'El campo DESCRIPCION no puede estar vacio!';
-      var div = description.parentElement;
+      error.innerText = 'El campo PRECIO solo puede contener carácteres numéricos!';
+      var div = price.parentElement;
       if (div.children[2]) {
           div.removeChild(div.children[2]);
       }
@@ -56,12 +85,35 @@ window.onload = function () {
       event.preventDefault();
     }
 
+    if (description.value == '') {
+      description.classList.add('is-invalid');
+      var error = document.createElement('span');
+      error.setAttribute('class','invalid-feedback');
+      error.innerText = 'El campo DESCRIPCION no puede estar vacio!';
+      var div = description.parentElement;
+      if (div.children[2]) {
+        div.removeChild(div.children[2]);
+      }
+      div.append(error);
+      event.preventDefault();
+    }
 
-    if (imgProduct.files.length == 0 || !(/\.(jpg|png)$/i).test(foto.name)) {
+    if (imgProduct.files.length == 0) {
       imgProduct.classList.add('is-invalid');
       var error = document.createElement('span');
       error.setAttribute('class','invalid-feedback');
-      error.innerText = 'El campo Imageen no es imagen o esta vacio!';
+      error.innerText = 'El campo Imagen no puede estar vacio!';
+      var div = imgProduct.parentElement;
+      if (div.children[2]) {
+          div.removeChild(div.children[2]);
+      }
+      div.append(error);
+      event.preventDefault();
+    }else if (!imagenTipo.test(imgProduct.value)) {
+      imgProduct.classList.add('is-invalid');
+      var error = document.createElement('span');
+      error.setAttribute('class','invalid-feedback');
+      error.innerText = 'El campo Imagen no tiene un formato soportado!';
       var div = imgProduct.parentElement;
       if (div.children[2]) {
           div.removeChild(div.children[2]);
@@ -111,10 +163,5 @@ window.onload = function () {
       div.append(error);
       event.preventDefault();
     }
-
-
-
   }
-
-
 }
