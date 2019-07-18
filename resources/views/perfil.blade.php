@@ -48,7 +48,7 @@
         <div class="form-group col-md-7">
            <label for="state">Provincia</label>
            <select id="state" name="state" class="form-control" value="{{ Auth::user()->state }}">
-                 <option selected>Elegir...</option>
+                 <option disabled selected>Seleccionar Provincia</option>
                  <option>Buenos Aires</option>
                  <option>Ciudad Autónoma de Buenos Aires</option>
                  <option>Catamarca</option>
@@ -82,8 +82,8 @@
          </div>
 
         <div class="form-group col-md-7">
-           <label for="codezip">Código Postal</label>
-           <input type="text" class="form-control" id="codezip" name="codezip" value="{{ Auth::user()->codezip}}">
+           <label for="zipcode">Código Postal</label>
+           <input type="text" class="form-control" id="zipcode" name="zipcode" value="{{ Auth::user()->zipcode}}">
          </div>
 
         <div class="form-group col-md-7">

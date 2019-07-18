@@ -54,6 +54,9 @@ class ViewController extends Controller
       $UpdateProfile->street =  $request['street'];
       $UpdateProfile->town = $request['town'];
       $UpdateProfile->state = $request['state'];
+      $UpdateProfile->zipcode = $request['zipcode'];
+
+
 
       $UpdateProfile->avatar = $request['avatar'];
       if($request->file('avatar')){
