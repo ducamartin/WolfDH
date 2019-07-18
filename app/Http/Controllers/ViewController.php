@@ -46,16 +46,30 @@ class ViewController extends Controller
   }
   public function updateProfile(Request $request)
   {
+
       $UpdateProfile = \Auth::user();
 
-      $UpdateProfile->avatar = $request['avatar'];
+
       $UpdateProfile->name = $request['name'];
       $UpdateProfile->street =  $request['street'];
       $UpdateProfile->town = $request['town'];
       $UpdateProfile->state = $request['state'];
 
+      $UpdateProfile->avatar = $request['avatar'];
+      if($request->file('avatar')){
+        //al archivo que subi lo voy a guardar en el filesystem de laravel
+        $rutaDelArchivo = $request->file('avatar')->store('public');
+        //le saco solo el nombre
+        $nombreArchivo = basename($rutaDelArchivo);
+        //guardo el nombre del archivo en el campo poster
+        $UpdateProfile->avatar = $nombreArchivo;
+      }
       $UpdateProfile->save();
 
-    return redirect('perfil');
-  }
+
+      return redirect('/perfil')
+      ->with([
+        'mensaje', 'Perfil editado exitosamente!'
+      ]);
+}
 }

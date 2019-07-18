@@ -9,6 +9,12 @@
         <h2>Editar perfil</h2>
       </div>
 
+      @if (session('mensaje'))
+         <div class="alert alert-success">
+             {{ session('mensaje') }}
+         </div>
+      @endif
+
       <div class="row justify-content-center">
 
         <div class="form-group col-md-3">
@@ -38,7 +44,7 @@
          </div>
         <div class="form-group col-md-7">
            <label for="state">Provincia</label>
-           <select id="state" class="form-control">
+           <select id="state" name="state" class="form-control">
                  <option selected>Elegir...</option>
                  <option>Buenos Aires</option>
                  <option>Ciudad Autónoma de Buenos Aires</option>
@@ -69,12 +75,12 @@
 
         <div class="form-group col-md-7">
            <label for="town">Localiad/Ciudad</label>
-           <input type="text" class="form-control" id="town" placeholder="">
+           <input type="text" class="form-control" id="town" name="town" placeholder="">
          </div>
 
         <div class="form-group col-md-7">
            <label for="codezip">Código Postal</label>
-           <input type="text" class="form-control" id="codezip">
+           <input type="text" class="form-control" id="codezip" name="codezip">
          </div>
 
         <div class="form-group col-md-7">
