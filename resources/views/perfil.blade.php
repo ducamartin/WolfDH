@@ -19,11 +19,14 @@
 
       </div>
 
+      <div class="form-group justify-content-center">
+        <img src="/storage/{{Auth::user()->avatar}}" alt="" class="editarAvatar">
+      </div>
+
       <div class="row justify-content-center">
 
         <div class="form-group col-md-3">
           <label for="avatar">Cambiar Avatar</label>
-          <img src="/storage/{{Auth::user()->avatar}}" alt="" class="avatar">
           <input id="avatar" type="file" name="avatar" class="form-control" >
           @error('avatar')
             <div class="alert alert-danger">{{ $message }}</div>
