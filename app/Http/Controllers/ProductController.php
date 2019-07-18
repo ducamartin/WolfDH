@@ -78,9 +78,9 @@ class ProductController extends Controller
     $leagues = League::all();
 
     if(isset($_GET['name'])){
-      $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->get();
+      $products = Product::where('name', 'LIKE', '%'.$_GET['name'].'%')->paginate(6);
     } else{
-      $products = Product::all();
+      $products = Product::paginate(6);
     }
 
     return view('products')
