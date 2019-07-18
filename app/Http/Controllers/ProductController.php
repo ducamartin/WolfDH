@@ -158,9 +158,9 @@ class ProductController extends Controller
       $productoAEditar->save();
 
       return redirect('/products')
-      ->with([
+      ->with(
         'mensaje', 'Producto modificado exitosamente!'
-      ]);
+      );
   }
 
   public function delete(Request $request)
@@ -172,9 +172,9 @@ class ProductController extends Controller
     $productoAEliminar -> delete();
 
     return redirect('/products')
-    ->with([
+    ->with(
       'mensaje', 'Producto eliminadoi exitosamente!'
-    ]);
+    );
   }
 
 }

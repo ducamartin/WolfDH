@@ -59,8 +59,6 @@
               </div>
             </div>
             <div class="row justify-content-center">
-
-
               <div  class="form-group col-md-7">
                   <label for="imgProduct">Imagen del Producto</label>
                   Cambiar imagen:<input class="form-control" type="file" name="imgProduct" value="">
@@ -72,7 +70,7 @@
             <div class="row justify-content-center">
               <div class="form-group col-md-7 ">
                 <label for="">Talle</label>
-                <select class="" name="size_id ">
+                <select class="" name="size_id">
                   @foreach ($sizes as $size)
                    <option value="{{$size->id}}" {{($size->id == $products->size_id)?'selected':''}}>{{$size->name}}</option>
                   @endforeach
