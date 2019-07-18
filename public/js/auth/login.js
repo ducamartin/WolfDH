@@ -3,6 +3,8 @@ window.onload = function () {
   var email = document.querySelector('#email');
   var password = document.querySelector('#password');
   var formulario = document.querySelector('form');
+  console.log(formulario);
+
 
   // email.onfocus = function () {
   //     this.classList.remove('is-invalid');

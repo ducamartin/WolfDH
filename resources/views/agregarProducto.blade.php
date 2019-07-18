@@ -29,7 +29,7 @@
         <div class="form-group col-md-7">
           <label for="">Marca</label>
           <select class="" name="brand_id">
-            <option disabled selected>Seleccionar Marca</option>
+            <option disabled selected value="0">Seleccionar Marca</option>
             @foreach ($brands as $brand)
               <option value="{{$brand->id}}">{{$brand->name}}</option>
             @endforeach
@@ -39,7 +39,7 @@
         <div class="form-group col-md-7">
           <label for="">Liga</label>
           <select class="" name="league_id">
-            <option disabled selected>Seleccionar Liga</option>
+            <option disabled selected value="0">Seleccionar Liga</option>
             @foreach ($leagues as $league)
               <option value="{{$league->id}}">{{$league->name}}</option>
             @endforeach
@@ -65,7 +65,7 @@
         <div class="form-group col-md-7">
           <label for="">Talle</label>
           <select class="" name="size_id">
-              <option disabled selected>Seleccionar Talle</option>
+              <option disabled selected value="0">Seleccionar Talle</option>
             @foreach ($sizes as $size)
               <option value="{{$size->id}}">{{$size->name}}</option>
             @endforeach
