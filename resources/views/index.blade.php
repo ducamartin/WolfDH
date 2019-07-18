@@ -59,7 +59,7 @@
 
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'italy'}}"><img src="img/sec1.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec1.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA ITALIANA</h4>
             </div> -->
@@ -67,7 +67,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'spain'}}"><img src="img/sec2.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec2.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA ESPAÑOLA</h4>
             </div> -->
@@ -75,7 +75,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'france'}}"><img src="img/sec3.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec3.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA FRANCESA</h4>
             </div> -->
@@ -83,7 +83,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'england'}}"><img src="img/sec4.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec4.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA INGLESA</h4>
             </div> -->
@@ -93,7 +93,7 @@
       <div class="row">
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'france'}}"><img src="img/sec3.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec3.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA FRANCESA</h4>
             </div> -->
@@ -101,7 +101,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'england'}}"><img src="img/sec4.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec4.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA INGLESA</h4>
             </div> -->
@@ -109,7 +109,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'italy'}}"><img src="img/sec1.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec1.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA ITALIANA</h4>
             </div> -->
@@ -117,7 +117,7 @@
         </div>
         <div class="cajacat col-xs-12 col-sm-6 col-md-3">
           <div class="card">
-            <a href="{{'spain'}}"><img src="img/sec2.jpg" class="card-img-top" alt="..."></a>
+            <a href="{{'products'}}"><img src="img/sec2.jpg" class="card-img-top" alt="..."></a>
             <!-- <div class="catLiga">
               <h4>LIGA ESPAÑOLA</h4>
             </div> -->
