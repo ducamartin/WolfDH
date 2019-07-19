@@ -51,14 +51,12 @@
            @error('street')
              <div class="alert alert-danger">{{ $message }}</div>
           @enderror
-         </div>
+        </div>
+
         <div class="form-group col-md-7">
            <label for="state">Provincia</label>
            <select id="state" name="state" class="form-control" value="{{ Auth::user()->state }}">
-             @error('state')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-                 <option disabled selected>Seleccionar Provincia</option>
+                 <option disabled selected value="0">Seleccionar Provincia</option>
                  <option>Buenos Aires</option>
                  <option>Ciudad Autónoma de Buenos Aires</option>
                  <option>Catamarca</option>
@@ -84,11 +82,13 @@
                  <option>Tierra del Fuego</option>
                  <option>Tucuman</option>
              </select>
-
+             @error('state')
+                <div class="alert alert-danger">{{ $message }}</div>
+             @enderror
           </div>
 
         <div class="form-group col-md-7">
-           <label for="town">Localiad/Ciudad</label>
+           <label for="town">Localidad/Ciudad</label>
            <input type="text" class="form-control" id="town" name="town" placeholder="" value="{{ Auth::user()->town}}">
            @error('town')
              <div class="alert alert-danger">{{ $message }}</div>
