@@ -105,6 +105,7 @@
 
 
 
+
           </div>
           </ul>
         </div>
@@ -130,7 +131,7 @@
         .then(function(data){
           console.log(data)
           bisabuelo.removeChild(abuelo);
-          alert('PRODUCTO ELIMINADO DEL CARRITO. REFRESQUE LA PAGINA');
+         alert('PRODUCTO ELIMINADO DEL CARRITO. POR FAVOR REFRESQUE LA PAGINA');
           location.reload(true);
 
         })
