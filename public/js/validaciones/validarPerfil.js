@@ -100,7 +100,7 @@ window.onload = function(){
       zipcode.classList.add('is-invalid');
       var error = document.createElement('span');
       error.setAttribute('class','invalid-feedback');
-      error.innerText = 'El Codigo Postal no puede estar vacio!';
+      error.innerText = 'El Codigo Postal debe ser un campo numerico!';
       var div = zipcode.parentElement;
       if (div.children[2]) {
         div.removeChild(div.children[2]);
@@ -109,18 +109,19 @@ window.onload = function(){
       event.preventDefault();
     }
 
-    if (avatar.files.length == 0) {
-      avatar.classList.add('is-invalid');
-      var error = document.createElement('span');
-      error.setAttribute('class','invalid-feedback');
-      error.innerText = 'El campo Avatar no puede estar vacio!';
-      var div = avatar.parentElement;
-      if (div.children[2]) {
-          div.removeChild(div.children[2]);
-      }
-      div.append(error);
-      event.preventDefault();
-    }else if (!imagenTipo.test(avatar.value)) {
+    // if (avatar.files.length == 0) {
+    //   avatar.classList.add('is-invalid');
+    //   var error = document.createElement('span');
+    //   error.setAttribute('class','invalid-feedback');
+    //   error.innerText = 'El campo Avatar no puede estar vacio!';
+    //   var div = avatar.parentElement;
+    //   if (div.children[2]) {
+    //       div.removeChild(div.children[2]);
+    //   }
+    //   div.append(error);
+    //   event.preventDefault();
+    // }else
+    if (!imagenTipo.test(avatar.value)) {
       avatar.classList.add('is-invalid');
       var error = document.createElement('span');
       error.setAttribute('class','invalid-feedback');

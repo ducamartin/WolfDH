@@ -45,7 +45,6 @@ class ViewController extends Controller
     return view('perfil');
   }
 
-<<<<<<< HEAD
   public function updateProfile(Request $request){
 
     $this->validate( $request, [
@@ -53,7 +52,7 @@ class ViewController extends Controller
       'street' => 'required:users',
       'town' => 'required:users',
       'state' => 'required:users',
-      'zipcode' => 'required:users',
+      'zipcode' => 'required|numeric:users',
       'avatar' => 'nullable|image'
     ],
     [
@@ -62,6 +61,7 @@ class ViewController extends Controller
       'town.required' => 'El campo Ciudad debe es Obligatorio',
       'state.required' => 'El campo Provincia es Obligatorio',
       'zipcode.required' => 'El campo Codigo Postal es Obligatorio',
+      'zipcode.numeric' => 'El campo Codigo Postal debe ser numerico',
       'image' => 'Imagen invalida'
    ]);
 
@@ -88,36 +88,4 @@ class ViewController extends Controller
       'mensaje', 'Perfil editado exitosamente!'
     );
   }
-=======
-    $this->validate( $req, [
-      
-      $UpdateProfile = \Auth::user();
-
-
-      $UpdateProfile->name = $request['name'];
-      $UpdateProfile->street =  $request['street'];
-      $UpdateProfile->town = $request['town'];
-      $UpdateProfile->state = $request['state'];
-      $UpdateProfile->zipcode = $request['zipcode'];
-
-
-
-      $UpdateProfile->avatar = $request['avatar'];
-      if($request->file('avatar')){
-        //al archivo que subi lo voy a guardar en el filesystem de laravel
-        $rutaDelArchivo = $request->file('avatar')->store('public');
-        //le saco solo el nombre
-        $nombreArchivo = basename($rutaDelArchivo);
-        //guardo el nombre del archivo en el campo poster
-        $UpdateProfile->avatar = $nombreArchivo;
-      }
-      $UpdateProfile->save();
-
-
-      return redirect('/perfil')
-      ->with(
-        'mensaje', 'Perfil editado exitosamente!'
-      );
-}
->>>>>>> c3ef8765aa07ae4bd412388aaf304a21c18f9e8f
 }
