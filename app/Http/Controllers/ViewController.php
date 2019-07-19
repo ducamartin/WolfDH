@@ -47,6 +47,8 @@ class ViewController extends Controller
   public function updateProfile(Request $request)
   {
 
+    $this->validate( $req, [
+      
       $UpdateProfile = \Auth::user();
 
 

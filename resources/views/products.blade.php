@@ -39,12 +39,14 @@
         </div>
 
       </div>
+      <div class="row justify-content-center">
+        @if (session('mensaje'))
+        <div class="alert alert-success">
+          {{ session('mensaje') }}
+        </div>
+        @endif
 
-      @if (session('mensaje'))
-         <div class="alert alert-success">
-             {{ session('mensaje') }}
-         </div>
-      @endif
+</div>
 
       <div class="row justify-content-center">
 
