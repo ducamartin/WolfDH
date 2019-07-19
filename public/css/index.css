@@ -22,7 +22,11 @@ footer{
 .carrusel{
   margin-top: 16px;
 }
-
+.editarAvatar{
+  border-radius: 50%;
+  width:100px;
+  padding-top: 20px;
+}
 .avatar{
   border-radius: 50%;
   width:50px;
@@ -199,7 +203,7 @@ i{
   text-align: center;
 }
 .cajacat1 .card-body{
-  padding: 10px;
+  padding-top: 10px;
 }
 .card-title {
 font-family: 'Rubik', sans-serif;
@@ -321,7 +325,7 @@ text-align: center  !important;
 
 #logoCarrito{
   width: 489px;
-    height: 120px;
+  height: auto;
   }
 #eliminarCarrito{
   padding: 8px;
@@ -356,6 +360,11 @@ text-align: center  !important;
 @media (max-width: 545px) {
   #logoCarrito{
     width: 300px;
+    height: auto;
+  }
+  #logoProducto{
+    width: 250px;
+    height: auto;
   }
 
 }

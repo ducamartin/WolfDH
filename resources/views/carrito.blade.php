@@ -103,6 +103,8 @@
               <h4 style="color:red">$ {{$sumaPrecio}}</h4>
             </div>
 
+
+
           </div>
           </ul>
         </div>
@@ -114,7 +116,6 @@
 
     <script type="text/javascript">
     var botones = document.querySelectorAll('form.carrito button' );
-
     for (boton of botones) {
       boton.onclick = function(){
         let abuelo = this.parentElement.parentElement;
@@ -129,6 +130,9 @@
         .then(function(data){
           console.log(data)
           bisabuelo.removeChild(abuelo);
+          alert('PRODUCTO ELIMINADO DEL CARRITO. REFRESQUE LA PAGINA');
+          location.reload(true);
+
         })
         .catch(function(error){
             console.log(error)
